@@ -16,7 +16,7 @@ namespace QuanLyKhoVan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Categories());
+            Application.Run(new Form_Products());
         }
     }
 }
