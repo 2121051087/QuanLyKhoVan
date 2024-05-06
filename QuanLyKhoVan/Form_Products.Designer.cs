@@ -71,11 +71,12 @@
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.Color.White;
             this.btn_Sua.Image = global::QuanLyKhoVan.Properties.Resources.ic_edit;
-            this.btn_Sua.Location = new System.Drawing.Point(880, 514);
+            this.btn_Sua.Location = new System.Drawing.Point(1052, 511);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(48, 48);
             this.btn_Sua.TabIndex = 36;
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // label1
             // 
@@ -98,7 +99,7 @@
             this.groupBox1.Controls.Add(this.panel_TenSanPham);
             this.groupBox1.Controls.Add(this.panel_ProductID);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(526, 12);
+            this.groupBox1.Location = new System.Drawing.Point(694, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(469, 484);
             this.groupBox1.TabIndex = 33;
@@ -304,7 +305,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(10, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(510, 555);
+            this.panel1.Size = new System.Drawing.Size(663, 555);
             this.panel1.TabIndex = 32;
             // 
             // dataGridView1
@@ -314,8 +315,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(487, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(631, 422);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // btn_Them
             // 
@@ -323,7 +325,7 @@
             this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.Color.White;
-            this.btn_Them.Location = new System.Drawing.Point(538, 510);
+            this.btn_Them.Location = new System.Drawing.Point(689, 511);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(128, 48);
             this.btn_Them.TabIndex = 34;
@@ -337,17 +339,18 @@
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
             this.btn_Xoa.Image = global::QuanLyKhoVan.Properties.Resources.ic_delete;
-            this.btn_Xoa.Location = new System.Drawing.Point(947, 514);
+            this.btn_Xoa.Location = new System.Drawing.Point(1115, 512);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(48, 48);
             this.btn_Xoa.TabIndex = 35;
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // Form_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 582);
+            this.ClientSize = new System.Drawing.Size(1175, 582);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);

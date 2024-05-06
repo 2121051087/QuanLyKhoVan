@@ -137,6 +137,64 @@ namespace QuanLyKhoVan
             dataGridView1.DataSource = data;
             
         }
+        void AddProduct()
+        {
+            if(txt_ProductID.Text == "" || txt_TenSanPham.Text == "" || txt_Mota.Text == "" || txt_Gia.Text == "" || txt_SoLuong.Text == "" || txt_CategoryID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else
+            {
+                Products product = new Products();
+                product.Product_ID = int.Parse(txt_ProductID.Text);
+                product.TenSanPham = txt_TenSanPham.Text;
+                product.MoTa = txt_Mota.Text;
+                product.Gia = txt_Gia.Text;
+                product.SoLuong = txt_SoLuong.Text;
+                product.Category_ID = int.Parse(txt_CategoryID.Text);
+                db.Products.Add(product);
+                db.SaveChanges();
+                LoadDataProduct();
+                ClearTextBox();
+            }   
+        }
+        void UpdateProduct()
+        {
+            if (txt_ProductID.Text == "" || txt_TenSanPham.Text == "" || txt_Mota.Text == "" || txt_Gia.Text == "" || txt_SoLuong.Text == "" || txt_CategoryID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
+            else
+            {
+                int id = int.Parse(txt_ProductID.Text);
+                Products product = db.Products.Where(s => s.Product_ID == id).FirstOrDefault();
+                product.TenSanPham = txt_TenSanPham.Text;
+                product.MoTa = txt_Mota.Text;
+                product.Gia = txt_Gia.Text;
+                product.SoLuong = txt_SoLuong.Text;
+                product.Category_ID = int.Parse(txt_CategoryID.Text);
+                db.SaveChanges();
+                LoadDataProduct();
+                ClearTextBox();
+            }
+        }   
+
+        void DeleteProduct ()
+        {
+            if (txt_ProductID.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa");
+            }
+            else
+            {
+                int id = int.Parse(txt_ProductID.Text);
+                Products product = db.Products.Where(s => s.Product_ID == id).FirstOrDefault();
+                db.Products.Remove(product);
+                db.SaveChanges();
+                LoadDataProduct();
+                ClearTextBox();
+            }
+        }
         void ClearTextBox()
         {
             txt_CategoryID.Text = "";
@@ -151,16 +209,71 @@ namespace QuanLyKhoVan
 
 
 
-        private void btn_Them_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form_Products_Load(object sender, EventArgs e)
         {
             LoadDataProduct();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddProduct();
+                MessageBox.Show("Thêm sản phẩm thành công");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Thêm sản phẩm thất bại " + ex);
+            }
+            
+        }
+
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            if (txt_ProductID.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần sửa");
+            }
+            else
+            {
+                try
+                {
+                    UpdateProduct();
+                    MessageBox.Show("Sửa sản phẩm thành công");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Sửa sản phẩm thất bại " + ex);
+                }
+             
+            }
+
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteProduct();
+                MessageBox.Show("Xóa sản phẩm thành công");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Xóa sản phẩm thất bại " + ex);
+            }
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            txt_ProductID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txt_TenSanPham.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txt_Mota.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txt_Gia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txt_SoLuong.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txt_CategoryID.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
         }
     }
 }
