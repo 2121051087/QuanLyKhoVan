@@ -64,6 +64,12 @@
     <Compile Include="Customers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Form_Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Categories.Designer.cs">
+      <DependentUpon>Form_Categories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employees.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -138,6 +144,9 @@
     <Compile Include="Warehouses.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_Categories.resx">
+      <DependentUpon>Form_Categories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ForgetPassword.resx">
       <DependentUpon>Form_ForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +198,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ic_delete.png" />
+    <None Include="Resources\ic_edit.png" />
     <None Include="Resources\ic_Login.png" />
     <None Include="Resources\ic_Password.png" />
     <None Include="Resources\ic_account.png" />
