@@ -23,8 +23,8 @@ namespace QuanLyKhoVan
         public int Product_ID { get; set; }
         public string TenSanPham { get; set; }
         public string MoTa { get; set; }
-        public string Gia { get; set; }
-        public string SoLuong { get; set; }
+        public Nullable<int> Gia { get; set; }
+        public Nullable<int> SoLuong { get; set; }
         public Nullable<int> Category_ID { get; set; }
     
         public virtual Categories Categories { get; set; }

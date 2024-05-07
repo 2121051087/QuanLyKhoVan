@@ -149,8 +149,8 @@ namespace QuanLyKhoVan
                 product.Product_ID = int.Parse(txt_ProductID.Text);
                 product.TenSanPham = txt_TenSanPham.Text;
                 product.MoTa = txt_Mota.Text;
-                product.Gia = txt_Gia.Text;
-                product.SoLuong = txt_SoLuong.Text;
+                product.Gia = int.Parse(txt_Gia.Text);
+                product.SoLuong = int.Parse(txt_SoLuong.Text);
                 product.Category_ID = int.Parse(txt_CategoryID.Text);
                 db.Products.Add(product);
                 db.SaveChanges();
@@ -170,8 +170,8 @@ namespace QuanLyKhoVan
                 Products product = db.Products.Where(s => s.Product_ID == id).FirstOrDefault();
                 product.TenSanPham = txt_TenSanPham.Text;
                 product.MoTa = txt_Mota.Text;
-                product.Gia = txt_Gia.Text;
-                product.SoLuong = txt_SoLuong.Text;
+                product.Gia = int.Parse(txt_Gia.Text);
+                product.SoLuong = int.Parse(txt_SoLuong.Text);
                 product.Category_ID = int.Parse(txt_CategoryID.Text);
                 db.SaveChanges();
                 LoadDataProduct();
@@ -215,19 +215,7 @@ namespace QuanLyKhoVan
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
-        private void btn_Them_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddProduct();
-                MessageBox.Show("Thêm sản phẩm thành công");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Thêm sản phẩm thất bại " + ex);
-            }
-            
-        }
+        
 
 
         private void btn_Sua_Click(object sender, EventArgs e)
@@ -274,6 +262,19 @@ namespace QuanLyKhoVan
             txt_SoLuong.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             txt_CategoryID.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddProduct();
+                MessageBox.Show("Thêm sản phẩm thành công");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Thêm sản phẩm thất bại" + ex);
+            }
         }
     }
 }

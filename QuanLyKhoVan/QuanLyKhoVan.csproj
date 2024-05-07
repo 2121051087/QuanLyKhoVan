@@ -64,14 +64,20 @@
     <Compile Include="Customers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Employees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form_Categories.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Categories.Designer.cs">
       <DependentUpon>Form_Categories.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employees.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="Form_Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Customers.Designer.cs">
+      <DependentUpon>Form_Customers.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_ForgetPassword.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,18 @@
     </Compile>
     <Compile Include="Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Order.Designer.cs">
+      <DependentUpon>Form_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_OrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_OrderDetails.Designer.cs">
+      <DependentUpon>Form_OrderDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Products.cs">
       <SubType>Form</SubType>
@@ -141,6 +159,12 @@
     <Compile Include="Shipments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Suppliers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -153,11 +177,20 @@
     <EmbeddedResource Include="Form_Categories.resx">
       <DependentUpon>Form_Categories.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Customers.resx">
+      <DependentUpon>Form_Customers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ForgetPassword.resx">
       <DependentUpon>Form_ForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Order.resx">
+      <DependentUpon>Form_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_OrderDetails.resx">
+      <DependentUpon>Form_OrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Products.resx">
       <DependentUpon>Form_Products.cs</DependentUpon>
