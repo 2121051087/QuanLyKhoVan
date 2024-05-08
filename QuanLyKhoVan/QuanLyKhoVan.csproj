@@ -306,6 +306,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ic_about-white.png" />
+    <None Include="Resources\ic_Menu.png" />
     <None Include="Resources\ic_delete.png" />
     <None Include="Resources\ic_edit.png" />
     <None Include="Resources\ic_Login.png" />

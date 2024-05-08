@@ -63,6 +63,16 @@ namespace QuanLyKhoVan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_about_white {
+            get {
+                object obj = ResourceManager.GetObject("ic_about-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_account {
             get {
                 object obj = ResourceManager.GetObject("ic_account", resourceCulture);
@@ -96,6 +106,16 @@ namespace QuanLyKhoVan.Properties {
         internal static System.Drawing.Bitmap ic_Login {
             get {
                 object obj = ResourceManager.GetObject("ic_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_Menu {
+            get {
+                object obj = ResourceManager.GetObject("ic_Menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

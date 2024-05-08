@@ -41,7 +41,7 @@ namespace QuanLyKhoVan
         #region Method 
         
 
-        void LoadDataCategory()
+       void LoadDataCategory()
         {
             var data = db.Categories.Select(s => new
             {
