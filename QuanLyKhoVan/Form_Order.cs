@@ -187,8 +187,9 @@ namespace QuanLyKhoVan
         void DeleteOrder()
         {
             int id = int.Parse(txt_OrderID.Text);
-            Order order = db.Order.Find(id);
-            db.Order.Remove(order);
+          
+            Order d = db.Order.Where(s => s.Order_ID == id).FirstOrDefault();
+            db.Order.Remove(d);
             db.SaveChanges();
             LoadDataOrder();
             ClearTextBox();
@@ -244,15 +245,7 @@ namespace QuanLyKhoVan
             }
             else
             {
-                try
-                {
-                    DeleteOrder();
-                    MessageBox.Show("Xóa thành công");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Xóa không thành công : " + ex.Message);
-                }
+                DeleteOrder();
             }
         }
 

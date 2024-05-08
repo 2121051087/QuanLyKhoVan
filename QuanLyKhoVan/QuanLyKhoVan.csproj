@@ -79,6 +79,12 @@
     <Compile Include="Form_Customers.Designer.cs">
       <DependentUpon>Form_Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Employees.Designer.cs">
+      <DependentUpon>Form_Employees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,18 @@
     </Compile>
     <Compile Include="Form_Home.Designer.cs">
       <DependentUpon>Form_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Incoming_Shipments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Incoming_Shipments.Designer.cs">
+      <DependentUpon>Form_Incoming_Shipments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_InventoryChecks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InventoryChecks.Designer.cs">
+      <DependentUpon>Form_InventoryChecks.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -109,17 +127,41 @@
     <Compile Include="Form_OrderDetails.Designer.cs">
       <DependentUpon>Form_OrderDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Outgoing_Shipments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Outgoing_Shipments.Designer.cs">
+      <DependentUpon>Form_Outgoing_Shipments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Products.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Products.Designer.cs">
       <DependentUpon>Form_Products.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Shipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Shipment.Designer.cs">
+      <DependentUpon>Form_Shipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_SignUp.Designer.cs">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Supplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Supplies.Designer.cs">
+      <DependentUpon>Form_Supplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Warehouses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Warehouses.Designer.cs">
+      <DependentUpon>Form_Warehouses.cs</DependentUpon>
     </Compile>
     <Compile Include="Incoming_Shipments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -180,8 +222,20 @@
     <EmbeddedResource Include="Form_Customers.resx">
       <DependentUpon>Form_Customers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Employees.resx">
+      <DependentUpon>Form_Employees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ForgetPassword.resx">
       <DependentUpon>Form_ForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Home.resx">
+      <DependentUpon>Form_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Incoming_Shipments.resx">
+      <DependentUpon>Form_Incoming_Shipments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_InventoryChecks.resx">
+      <DependentUpon>Form_InventoryChecks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -192,11 +246,23 @@
     <EmbeddedResource Include="Form_OrderDetails.resx">
       <DependentUpon>Form_OrderDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Outgoing_Shipments.resx">
+      <DependentUpon>Form_Outgoing_Shipments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Products.resx">
       <DependentUpon>Form_Products.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Shipment.resx">
+      <DependentUpon>Form_Shipment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_SignUp.resx">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Supplies.resx">
+      <DependentUpon>Form_Supplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Warehouses.resx">
+      <DependentUpon>Form_Warehouses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

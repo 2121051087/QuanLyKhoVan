@@ -55,7 +55,7 @@
           <Property Name="Warehouse_ID" Type="int" />
           <Property Name="NgayKiemKe" Type="datetime" />
           <Property Name="Employee_ID" Type="int" />
-          <Property Name="status" Type="nchar" MaxLength="10" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -432,7 +432,7 @@
           <Property Name="Warehouse_ID" Type="Int32" />
           <Property Name="NgayKiemKe" Type="DateTime" Precision="3" />
           <Property Name="Employee_ID" Type="Int32" />
-          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_Inventory_Checks_Employees" FromRole="Inventory_Checks" ToRole="Employees" />
           <NavigationProperty Name="Warehouses" Relationship="Self.FK_Inventory_Checks_Warehouses" FromRole="Inventory_Checks" ToRole="Warehouses" />
         </EntityType>

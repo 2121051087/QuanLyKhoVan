@@ -18,21 +18,22 @@ namespace QuanLyKhoVan
           
         }
         #region Xu ly UI
-        private void txt_CategoryID_Click(object sender, EventArgs e)
+        private void txt_Category_ID_Click(object sender, EventArgs e)
         {
-            txt_CategoryID.BackColor = Color.White;
+            txt_Category_ID.BackColor = Color.White;
             panel_Category_ID.BackColor = Color.White;
             txt_TenDanhMuc.BackColor = SystemColors.Control;
             panel_TenDanhMuc.BackColor = SystemColors.Control;
         }
-
         private void txt_TenDanhMuc_Click(object sender, EventArgs e)
         {
-            txt_CategoryID.BackColor = SystemColors.Control;
+            txt_Category_ID.BackColor = SystemColors.Control;
             panel_Category_ID.BackColor = SystemColors.Control;
             txt_TenDanhMuc.BackColor = Color.White;
             panel_TenDanhMuc.BackColor = Color.White;
         }
+
+        
         #endregion
 
         QuanLyKhoVan db  = new QuanLyKhoVan(); // tao doi tuong db
@@ -52,7 +53,7 @@ namespace QuanLyKhoVan
         
         void AddCategory()
         {
-         if (txt_CategoryID.Text == "" || txt_TenDanhMuc.Text == "")
+         if (txt_Category_ID.Text == "" || txt_TenDanhMuc.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy dủ thông tin ");
             }
@@ -60,7 +61,7 @@ namespace QuanLyKhoVan
             {
                 Categories category = new Categories();
                 category.TenDanhMuc = txt_TenDanhMuc.Text;
-                category.Category_ID = int.Parse(txt_CategoryID.Text);
+                category.Category_ID = int.Parse(txt_Category_ID.Text);
                 db.Categories.Add(category);
                 db.SaveChanges();
                 LoadDataCategory();
@@ -70,13 +71,13 @@ namespace QuanLyKhoVan
 
         void UpdateCategory()
         {
-         if (txt_CategoryID.Text == "")
+         if (txt_Category_ID.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Danh mục cần sửa");
             }
             else
             {
-                int id = int.Parse(txt_CategoryID.Text);
+                int id = int.Parse(txt_Category_ID.Text);
                 Categories category = db.Categories.Where(s => s.Category_ID == id).FirstOrDefault();
                 category.TenDanhMuc = txt_TenDanhMuc.Text;
                 db.SaveChanges();
@@ -87,13 +88,13 @@ namespace QuanLyKhoVan
 
         void DeleteCategory()
         {
-            if (txt_CategoryID.Text == "")
+            if (txt_Category_ID.Text == "")
             {
                     MessageBox.Show("Vui lòng chọn Danh mục cần xóa");
                 }
                 else
             {
-                    int id = int.Parse(txt_CategoryID.Text);
+                    int id = int.Parse(txt_Category_ID.Text);
                     Categories category = db.Categories.Where(s => s.Category_ID == id).FirstOrDefault();
                     db.Categories.Remove(category);
                     db.SaveChanges();
@@ -104,14 +105,14 @@ namespace QuanLyKhoVan
 
         void ClearTextBox ()
         {
-            txt_CategoryID.Text = "";
+            txt_Category_ID.Text = "";
             txt_TenDanhMuc.Text = "";
         }
 
         #endregion
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if(int.TryParse(txt_CategoryID.Text, out int result) == false)
+            if(int.TryParse(txt_Category_ID.Text, out int result) == false)
             {
                 MessageBox.Show("Danh mục ID phải là số nguyên");
                 return;
@@ -164,8 +165,10 @@ namespace QuanLyKhoVan
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-            txt_CategoryID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txt_Category_ID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txt_TenDanhMuc.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
+
+      
     }
 }

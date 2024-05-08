@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhoVan
 {
-    partial class Form_Categories
+    partial class Form_Warehouses
     {
         /// <summary>
         /// Required designer variable.
@@ -31,29 +31,29 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel_TenDanhMuc = new System.Windows.Forms.Panel();
-            this.txt_TenDanhMuc = new System.Windows.Forms.TextBox();
+            this.panel_DiaDiem = new System.Windows.Forms.Panel();
+            this.txt_DiaDiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel_Category_ID = new System.Windows.Forms.Panel();
-            this.txt_Category_ID = new System.Windows.Forms.TextBox();
+            this.panel_WarehouseID = new System.Windows.Forms.Panel();
+            this.txt_WarehouseID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel_TenDanhMuc.SuspendLayout();
-            this.panel_Category_ID.SuspendLayout();
+            this.panel_DiaDiem.SuspendLayout();
+            this.panel_WarehouseID.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 194);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 199);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(568, 223);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 33;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // btn_Them
@@ -73,39 +73,39 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.panel_TenDanhMuc);
-            this.groupBox1.Controls.Add(this.panel_Category_ID);
+            this.groupBox1.Controls.Add(this.panel_DiaDiem);
+            this.groupBox1.Controls.Add(this.panel_WarehouseID);
             this.groupBox1.Controls.Add(this.btn_Xoa);
             this.groupBox1.Controls.Add(this.btn_Sua);
             this.groupBox1.Controls.Add(this.btn_Them);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 24);
+            this.groupBox1.Location = new System.Drawing.Point(23, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(568, 164);
-            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bản ghi ";
             // 
-            // panel_TenDanhMuc
+            // panel_DiaDiem
             // 
-            this.panel_TenDanhMuc.BackColor = System.Drawing.Color.White;
-            this.panel_TenDanhMuc.Controls.Add(this.txt_TenDanhMuc);
-            this.panel_TenDanhMuc.Controls.Add(this.label1);
-            this.panel_TenDanhMuc.Location = new System.Drawing.Point(15, 92);
-            this.panel_TenDanhMuc.Name = "panel_TenDanhMuc";
-            this.panel_TenDanhMuc.Size = new System.Drawing.Size(421, 46);
-            this.panel_TenDanhMuc.TabIndex = 37;
+            this.panel_DiaDiem.BackColor = System.Drawing.Color.White;
+            this.panel_DiaDiem.Controls.Add(this.txt_DiaDiem);
+            this.panel_DiaDiem.Controls.Add(this.label1);
+            this.panel_DiaDiem.Location = new System.Drawing.Point(15, 92);
+            this.panel_DiaDiem.Name = "panel_DiaDiem";
+            this.panel_DiaDiem.Size = new System.Drawing.Size(421, 46);
+            this.panel_DiaDiem.TabIndex = 37;
             // 
-            // txt_TenDanhMuc
+            // txt_DiaDiem
             // 
-            this.txt_TenDanhMuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_TenDanhMuc.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenDanhMuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
-            this.txt_TenDanhMuc.Location = new System.Drawing.Point(167, 6);
-            this.txt_TenDanhMuc.Name = "txt_TenDanhMuc";
-            this.txt_TenDanhMuc.Size = new System.Drawing.Size(251, 32);
-            this.txt_TenDanhMuc.TabIndex = 1;
-            this.txt_TenDanhMuc.Click += new System.EventHandler(this.txt_TenDanhMuc_Click);
+            this.txt_DiaDiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_DiaDiem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DiaDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
+            this.txt_DiaDiem.Location = new System.Drawing.Point(138, 7);
+            this.txt_DiaDiem.Name = "txt_DiaDiem";
+            this.txt_DiaDiem.Size = new System.Drawing.Size(280, 32);
+            this.txt_DiaDiem.TabIndex = 1;
+            this.txt_DiaDiem.Click += new System.EventHandler(this.txt_DiaDiem_Click);
             // 
             // label1
             // 
@@ -114,30 +114,30 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 28);
+            this.label1.Size = new System.Drawing.Size(115, 28);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Tên danh mục :";
+            this.label1.Text = " Địa điểm :";
             // 
-            // panel_Category_ID
+            // panel_WarehouseID
             // 
-            this.panel_Category_ID.BackColor = System.Drawing.Color.White;
-            this.panel_Category_ID.Controls.Add(this.txt_Category_ID);
-            this.panel_Category_ID.Controls.Add(this.label2);
-            this.panel_Category_ID.Location = new System.Drawing.Point(15, 29);
-            this.panel_Category_ID.Name = "panel_Category_ID";
-            this.panel_Category_ID.Size = new System.Drawing.Size(421, 46);
-            this.panel_Category_ID.TabIndex = 36;
+            this.panel_WarehouseID.BackColor = System.Drawing.Color.White;
+            this.panel_WarehouseID.Controls.Add(this.txt_WarehouseID);
+            this.panel_WarehouseID.Controls.Add(this.label2);
+            this.panel_WarehouseID.Location = new System.Drawing.Point(15, 29);
+            this.panel_WarehouseID.Name = "panel_WarehouseID";
+            this.panel_WarehouseID.Size = new System.Drawing.Size(421, 46);
+            this.panel_WarehouseID.TabIndex = 36;
             // 
-            // txt_Category_ID
+            // txt_WarehouseID
             // 
-            this.txt_Category_ID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Category_ID.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Category_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
-            this.txt_Category_ID.Location = new System.Drawing.Point(147, 6);
-            this.txt_Category_ID.Name = "txt_Category_ID";
-            this.txt_Category_ID.Size = new System.Drawing.Size(271, 32);
-            this.txt_Category_ID.TabIndex = 1;
-            this.txt_Category_ID.Click += new System.EventHandler(this.txt_Category_ID_Click);
+            this.txt_WarehouseID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_WarehouseID.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_WarehouseID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
+            this.txt_WarehouseID.Location = new System.Drawing.Point(183, 7);
+            this.txt_WarehouseID.Name = "txt_WarehouseID";
+            this.txt_WarehouseID.Size = new System.Drawing.Size(235, 32);
+            this.txt_WarehouseID.TabIndex = 1;
+            this.txt_WarehouseID.Click += new System.EventHandler(this.txt_WarehouseID_Click);
             // 
             // label2
             // 
@@ -146,9 +146,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
             this.label2.Location = new System.Drawing.Point(3, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 28);
+            this.label2.Size = new System.Drawing.Size(163, 28);
             this.label2.TabIndex = 20;
-            this.label2.Text = "Category_ID :";
+            this.label2.Text = "Warehouse_ID : ";
             // 
             // btn_Xoa
             // 
@@ -178,23 +178,22 @@
             this.btn_Sua.UseVisualStyleBackColor = false;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
-            // Form_Categories
+            // Form_Warehouses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 450);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.MaximumSize = new System.Drawing.Size(632, 497);
-            this.Name = "Form_Categories";
-            this.Text = "DanhMuc";
-            this.Load += new System.EventHandler(this.Form_Categories_Load);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "Form_Warehouses";
+            this.Text = "Form_Warehouses";
+            this.Load += new System.EventHandler(this.Form_Warehouses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.panel_TenDanhMuc.ResumeLayout(false);
-            this.panel_TenDanhMuc.PerformLayout();
-            this.panel_Category_ID.ResumeLayout(false);
-            this.panel_Category_ID.PerformLayout();
+            this.panel_DiaDiem.ResumeLayout(false);
+            this.panel_DiaDiem.PerformLayout();
+            this.panel_WarehouseID.ResumeLayout(false);
+            this.panel_WarehouseID.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,15 +201,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Panel panel_TenDanhMuc;
-        private System.Windows.Forms.TextBox txt_TenDanhMuc;
+        private System.Windows.Forms.Panel panel_DiaDiem;
+        private System.Windows.Forms.TextBox txt_DiaDiem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel_Category_ID;
-        private System.Windows.Forms.TextBox txt_Category_ID;
+        private System.Windows.Forms.Panel panel_WarehouseID;
+        private System.Windows.Forms.TextBox txt_WarehouseID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_Xoa;
+        private System.Windows.Forms.Button btn_Sua;
     }
 }
