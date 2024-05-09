@@ -163,6 +163,7 @@ namespace QuanLyKhoVan
 
 
         #endregion
+
         private void btn_Them_Click(object sender, EventArgs e)
         {
             if(txt_ShipmentID.Text == "" || txt_WarehouseID.Text == "" || txt_SupplierID.Text == "" || txt_NgayXuatHang.Text == "" || txt_status.Text == "")
