@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QuanLyKhoVan
 {
@@ -17,6 +18,7 @@ namespace QuanLyKhoVan
         public Form_Home()
         {
             InitializeComponent();
+           
         }
 
 
@@ -422,25 +424,33 @@ namespace QuanLyKhoVan
             form_Inventory_Checks.FormClosed += (s, args) => this.Show();
 
         }
+        private void btn_DonHangChiTiet_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_OrderDetails form_OrderDetails = new Form_OrderDetails();
+            form_OrderDetails.ShowDialog();
 
+            this.Show();
+            form_OrderDetails.FormClosed += (s, args) => this.Show();
+        }
         #endregion
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panel3.Invoke((MethodInvoker)(() =>
-            {
-                if (check)
-                {
-                    panel3.Left -= 200;
-                }
-                else
-                {
-                    panel3.Left += 200;
-                }
+            //panel3.Invoke((MethodInvoker)(() =>
+            //{
+            //    if (check)
+            //    {
+            //        panel3.Left -= 150;
+            //    }
+            //    else
+            //    {
+            //        panel3.Left += 150;
+            //    }
 
-                timer1.Stop();
-                check = !check;
-            }));
+            //    timer1.Stop();
+            //    check = !check;
+            //}));
         }
         void CountEmployess()
         {
@@ -472,6 +482,47 @@ namespace QuanLyKhoVan
             CountWarehouses();
             CountOrder();
             CountCategories();
+            InventoryChart();
+        }
+
+
+        void InventoryChart()
+        {
+            var invertory = (from p in db.Products
+                             join o in db.Order_Details on p.Product_ID equals o.Product_ID into poGroup
+                             from po in poGroup.DefaultIfEmpty()
+                             select new
+                             {
+                                 Product_ID = p.Product_ID,
+                                 invertory = p.SoLuong - (po.SoLuongSanPham == null ? 0 : po.SoLuongSanPham)
+                      
+                             }).ToList();
+
+            if (chart1.Series.IndexOf("Inventory") == -1)
+            {
+                chart1.Series.Add("Inventory");
+                foreach (var item in invertory)
+                {
+                    chart1.Series["Inventory"].Points.AddXY(item.Product_ID, item.invertory);
+                }
+            };
+
+          
+
+            chart1.Series["Inventory"].ChartType = SeriesChartType.Column;
+            chart1.ChartAreas[0].AxisX.Title = "Sản phẩm ";
+            chart1.ChartAreas[0].AxisY.Title = "Số lượng tồn ";
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+
+        }
+
+        private void btn_ReloadForm_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Home form_Home = new Form_Home();
+            form_Home.ShowDialog();
+
+           
         }
     }
 }

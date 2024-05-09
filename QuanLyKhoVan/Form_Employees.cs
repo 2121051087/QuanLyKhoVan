@@ -15,6 +15,7 @@ namespace QuanLyKhoVan
         public Form_Employees()
         {
             InitializeComponent();
+           
         }
         #region Xu li UI
         private void txt_EmployeeID_Click(object sender, EventArgs e)

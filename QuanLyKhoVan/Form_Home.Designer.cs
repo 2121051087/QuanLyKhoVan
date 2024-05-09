@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_LogOut = new System.Windows.Forms.Button();
@@ -38,6 +41,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_DonHangChiTiet = new System.Windows.Forms.Button();
             this.btn_KiemKe = new System.Windows.Forms.Button();
             this.btn_NhaCungCap = new System.Windows.Forms.Button();
             this.btn_PhieuXuat = new System.Windows.Forms.Button();
@@ -51,24 +55,26 @@
             this.btn_NhanVien = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_ReloadForm = new System.Windows.Forms.Button();
             this.btn_QuanLy = new System.Windows.Forms.Button();
             this.btn_About = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.lb_KqSoNhanVien = new System.Windows.Forms.Label();
-            this.lb_KqSoKhoHang = new System.Windows.Forms.Label();
-            this.lb_KqSoDonHang = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.lb_SoLoaiSanPham = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lb_KqSoKhoHang = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lb_KqSoDonHang = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -77,13 +83,15 @@
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -192,6 +200,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.btn_DonHangChiTiet);
             this.panel2.Controls.Add(this.btn_KiemKe);
             this.panel2.Controls.Add(this.btn_NhaCungCap);
             this.panel2.Controls.Add(this.btn_PhieuXuat);
@@ -207,6 +216,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 803);
             this.panel2.TabIndex = 0;
+            // 
+            // btn_DonHangChiTiet
+            // 
+            this.btn_DonHangChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
+            this.btn_DonHangChiTiet.FlatAppearance.BorderSize = 0;
+            this.btn_DonHangChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DonHangChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DonHangChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btn_DonHangChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DonHangChiTiet.Location = new System.Drawing.Point(0, 704);
+            this.btn_DonHangChiTiet.Name = "btn_DonHangChiTiet";
+            this.btn_DonHangChiTiet.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.btn_DonHangChiTiet.Size = new System.Drawing.Size(250, 64);
+            this.btn_DonHangChiTiet.TabIndex = 14;
+            this.btn_DonHangChiTiet.Text = "Đơn hàng chi tiết \r\n\r\n\r\n";
+            this.btn_DonHangChiTiet.UseVisualStyleBackColor = false;
+            this.btn_DonHangChiTiet.Click += new System.EventHandler(this.btn_DonHangChiTiet_Click);
             // 
             // btn_KiemKe
             // 
@@ -392,13 +418,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 757);
+            this.panel1.Size = new System.Drawing.Size(252, 800);
             this.panel1.TabIndex = 6;
             this.panel1.Visible = false;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel5.Controls.Add(this.btn_ReloadForm);
             this.panel5.Controls.Add(this.btn_QuanLy);
             this.panel5.Controls.Add(this.btn_About);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -407,6 +434,49 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1582, 65);
             this.panel5.TabIndex = 16;
+            // 
+            // btn_ReloadForm
+            // 
+            this.btn_ReloadForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_ReloadForm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_ReloadForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ReloadForm.Image = global::QuanLyKhoVan.Properties.Resources.reload;
+            this.btn_ReloadForm.Location = new System.Drawing.Point(297, 7);
+            this.btn_ReloadForm.Name = "btn_ReloadForm";
+            this.btn_ReloadForm.Size = new System.Drawing.Size(48, 48);
+            this.btn_ReloadForm.TabIndex = 3;
+            this.btn_ReloadForm.UseVisualStyleBackColor = false;
+            this.btn_ReloadForm.Click += new System.EventHandler(this.btn_ReloadForm_Click);
+            // 
+            // btn_QuanLy
+            // 
+            this.btn_QuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_QuanLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QuanLy.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuanLy.ForeColor = System.Drawing.Color.White;
+            this.btn_QuanLy.Image = global::QuanLyKhoVan.Properties.Resources.ic_menu_white;
+            this.btn_QuanLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QuanLy.Location = new System.Drawing.Point(8, 7);
+            this.btn_QuanLy.Name = "btn_QuanLy";
+            this.btn_QuanLy.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_QuanLy.Size = new System.Drawing.Size(244, 48);
+            this.btn_QuanLy.TabIndex = 2;
+            this.btn_QuanLy.Text = "Quản lý ";
+            this.btn_QuanLy.UseVisualStyleBackColor = false;
+            this.btn_QuanLy.Click += new System.EventHandler(this.btn_QuanLy_Click);
+            // 
+            // btn_About
+            // 
+            this.btn_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_About.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_About.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_About.Image = global::QuanLyKhoVan.Properties.Resources.ic_about_white;
+            this.btn_About.Location = new System.Drawing.Point(1446, 12);
+            this.btn_About.Name = "btn_About";
+            this.btn_About.Size = new System.Drawing.Size(48, 48);
+            this.btn_About.TabIndex = 1;
+            this.btn_About.UseVisualStyleBackColor = false;
+            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
             // 
             // panel6
             // 
@@ -419,49 +489,26 @@
             this.panel6.Size = new System.Drawing.Size(293, 140);
             this.panel6.TabIndex = 17;
             // 
-            // panel7
+            // lb_KqSoNhanVien
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.panel7.Controls.Add(this.lb_SoLoaiSanPham);
-            this.panel7.Controls.Add(this.pictureBox4);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Location = new System.Drawing.Point(450, 117);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(293, 140);
-            this.panel7.TabIndex = 18;
+            this.lb_KqSoNhanVien.AutoSize = true;
+            this.lb_KqSoNhanVien.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_KqSoNhanVien.ForeColor = System.Drawing.Color.White;
+            this.lb_KqSoNhanVien.Location = new System.Drawing.Point(165, 22);
+            this.lb_KqSoNhanVien.Name = "lb_KqSoNhanVien";
+            this.lb_KqSoNhanVien.Size = new System.Drawing.Size(69, 54);
+            this.lb_KqSoNhanVien.TabIndex = 24;
+            this.lb_KqSoNhanVien.Text = "33";
             // 
-            // panel8
+            // pictureBox3
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.panel8.Controls.Add(this.lb_KqSoKhoHang);
-            this.panel8.Controls.Add(this.label1);
-            this.panel8.Controls.Add(this.pictureBox1);
-            this.panel8.Location = new System.Drawing.Point(1226, 117);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(293, 140);
-            this.panel8.TabIndex = 19;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
-            this.panel9.Controls.Add(this.lb_KqSoDonHang);
-            this.panel9.Controls.Add(this.pictureBox2);
-            this.panel9.Controls.Add(this.label3);
-            this.panel9.Location = new System.Drawing.Point(838, 117);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(293, 140);
-            this.panel9.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(142, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 28);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Số đơn hàng ";
+            this.pictureBox3.Image = global::QuanLyKhoVan.Properties.Resources.ic_people;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
             // 
             // label4
             // 
@@ -474,6 +521,38 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Số nhân viên ";
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.panel7.Controls.Add(this.lb_SoLoaiSanPham);
+            this.panel7.Controls.Add(this.pictureBox4);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Location = new System.Drawing.Point(450, 117);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(293, 140);
+            this.panel7.TabIndex = 18;
+            // 
+            // lb_SoLoaiSanPham
+            // 
+            this.lb_SoLoaiSanPham.AutoSize = true;
+            this.lb_SoLoaiSanPham.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoLoaiSanPham.ForeColor = System.Drawing.Color.White;
+            this.lb_SoLoaiSanPham.Location = new System.Drawing.Point(201, 22);
+            this.lb_SoLoaiSanPham.Name = "lb_SoLoaiSanPham";
+            this.lb_SoLoaiSanPham.Size = new System.Drawing.Size(69, 54);
+            this.lb_SoLoaiSanPham.TabIndex = 27;
+            this.lb_SoLoaiSanPham.Text = "33";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::QuanLyKhoVan.Properties.Resources.ic_Invetory;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -484,6 +563,28 @@
             this.label5.Size = new System.Drawing.Size(179, 28);
             this.label5.TabIndex = 22;
             this.label5.Text = "Số loại sản phẩm ";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel8.Controls.Add(this.lb_KqSoKhoHang);
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Controls.Add(this.pictureBox1);
+            this.panel8.Location = new System.Drawing.Point(1226, 117);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(293, 140);
+            this.panel8.TabIndex = 19;
+            // 
+            // lb_KqSoKhoHang
+            // 
+            this.lb_KqSoKhoHang.AutoSize = true;
+            this.lb_KqSoKhoHang.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_KqSoKhoHang.ForeColor = System.Drawing.Color.White;
+            this.lb_KqSoKhoHang.Location = new System.Drawing.Point(199, 22);
+            this.lb_KqSoKhoHang.Name = "lb_KqSoKhoHang";
+            this.lb_KqSoKhoHang.Size = new System.Drawing.Size(69, 54);
+            this.lb_KqSoKhoHang.TabIndex = 25;
+            this.lb_KqSoKhoHang.Text = "33";
             // 
             // label1
             // 
@@ -506,87 +607,16 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // panel9
             // 
-            this.pictureBox2.Image = global::QuanLyKhoVan.Properties.Resources.ic_Orders;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 45);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::QuanLyKhoVan.Properties.Resources.ic_Invetory;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 45);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(90, 90);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 24;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::QuanLyKhoVan.Properties.Resources.ic_people;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 45);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(90, 90);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btn_QuanLy
-            // 
-            this.btn_QuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_QuanLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_QuanLy.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuanLy.ForeColor = System.Drawing.Color.White;
-            this.btn_QuanLy.Image = global::QuanLyKhoVan.Properties.Resources.ic_menu_white;
-            this.btn_QuanLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuanLy.Location = new System.Drawing.Point(8, 7);
-            this.btn_QuanLy.Name = "btn_QuanLy";
-            this.btn_QuanLy.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_QuanLy.Size = new System.Drawing.Size(244, 48);
-            this.btn_QuanLy.TabIndex = 2;
-            this.btn_QuanLy.Text = "Quản lý ";
-            this.btn_QuanLy.UseVisualStyleBackColor = false;
-            this.btn_QuanLy.Click += new System.EventHandler(this.btn_QuanLy_Click);
-            // 
-            // btn_About
-            // 
-            this.btn_About.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_About.FlatAppearance.BorderSize = 0;
-            this.btn_About.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_About.Image = global::QuanLyKhoVan.Properties.Resources.ic_about_white;
-            this.btn_About.Location = new System.Drawing.Point(1446, 12);
-            this.btn_About.Name = "btn_About";
-            this.btn_About.Size = new System.Drawing.Size(48, 48);
-            this.btn_About.TabIndex = 1;
-            this.btn_About.UseVisualStyleBackColor = false;
-            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
-            // 
-            // lb_KqSoNhanVien
-            // 
-            this.lb_KqSoNhanVien.AutoSize = true;
-            this.lb_KqSoNhanVien.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_KqSoNhanVien.ForeColor = System.Drawing.Color.White;
-            this.lb_KqSoNhanVien.Location = new System.Drawing.Point(165, 22);
-            this.lb_KqSoNhanVien.Name = "lb_KqSoNhanVien";
-            this.lb_KqSoNhanVien.Size = new System.Drawing.Size(69, 54);
-            this.lb_KqSoNhanVien.TabIndex = 24;
-            this.lb_KqSoNhanVien.Text = "33";
-            // 
-            // lb_KqSoKhoHang
-            // 
-            this.lb_KqSoKhoHang.AutoSize = true;
-            this.lb_KqSoKhoHang.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_KqSoKhoHang.ForeColor = System.Drawing.Color.White;
-            this.lb_KqSoKhoHang.Location = new System.Drawing.Point(199, 22);
-            this.lb_KqSoKhoHang.Name = "lb_KqSoKhoHang";
-            this.lb_KqSoKhoHang.Size = new System.Drawing.Size(69, 54);
-            this.lb_KqSoKhoHang.TabIndex = 25;
-            this.lb_KqSoKhoHang.Text = "33";
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
+            this.panel9.Controls.Add(this.lb_KqSoDonHang);
+            this.panel9.Controls.Add(this.pictureBox2);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Location = new System.Drawing.Point(838, 117);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(293, 140);
+            this.panel9.TabIndex = 19;
             // 
             // lb_KqSoDonHang
             // 
@@ -599,20 +629,47 @@
             this.lb_KqSoDonHang.TabIndex = 26;
             this.lb_KqSoDonHang.Text = "33";
             // 
-            // lb_SoLoaiSanPham
+            // pictureBox2
             // 
-            this.lb_SoLoaiSanPham.AutoSize = true;
-            this.lb_SoLoaiSanPham.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_SoLoaiSanPham.ForeColor = System.Drawing.Color.White;
-            this.lb_SoLoaiSanPham.Location = new System.Drawing.Point(201, 22);
-            this.lb_SoLoaiSanPham.Name = "lb_SoLoaiSanPham";
-            this.lb_SoLoaiSanPham.Size = new System.Drawing.Size(69, 54);
-            this.lb_SoLoaiSanPham.TabIndex = 27;
-            this.lb_SoLoaiSanPham.Text = "33";
+            this.pictureBox2.Image = global::QuanLyKhoVan.Properties.Resources.ic_Orders;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(142, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 28);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Số đơn hàng ";
+            // 
+            // chart1
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(64, 34);
+            this.chart1.Name = "chart1";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(546, 319);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.chart1);
             this.panel10.Location = new System.Drawing.Point(854, 378);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(650, 400);
@@ -623,17 +680,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1582, 822);
+            this.ClientSize = new System.Drawing.Size(1582, 865);
             this.ControlBox = false;
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -647,16 +704,18 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -702,6 +761,9 @@
         private System.Windows.Forms.Label lb_SoLoaiSanPham;
         private System.Windows.Forms.Label lb_KqSoKhoHang;
         private System.Windows.Forms.Label lb_KqSoDonHang;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button btn_DonHangChiTiet;
+        private System.Windows.Forms.Button btn_ReloadForm;
     }
 }
