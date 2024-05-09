@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -290,6 +291,8 @@ namespace QuanLyKhoVan
         private bool check;
 
 
+
+
         private void btn_About_Click(object sender, EventArgs e)
         {
             ShowAboutInfo();
@@ -298,7 +301,10 @@ namespace QuanLyKhoVan
         private void btn_QuanLy_Click(object sender, EventArgs e)
         {
             ShowQuanLy();
+            timer1.Start();
         }
+
+
         #region Xử lí  điều hướng form quản lí 
 
         private void btn_SanPham_Click(object sender, EventArgs e)
@@ -416,8 +422,56 @@ namespace QuanLyKhoVan
             form_Inventory_Checks.FormClosed += (s, args) => this.Show();
 
         }
+
         #endregion
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            panel3.Invoke((MethodInvoker)(() =>
+            {
+                if (check)
+                {
+                    panel3.Left -= 200;
+                }
+                else
+                {
+                    panel3.Left += 200;
+                }
 
+                timer1.Stop();
+                check = !check;
+            }));
+        }
+        void CountEmployess()
+        {
+            var data = db.Employees.Count();
+            lb_KqSoNhanVien.Text = data.ToString();
+
+        }
+        void CountWarehouses()
+        {
+            var data = db.Warehouses.Count();
+            lb_KqSoKhoHang.Text = data.ToString();
+        }
+        void CountOrder()
+        {
+            var data = db.Order.Count();
+            lb_KqSoDonHang.Text = data.ToString();
+        }
+
+        void CountCategories()
+        {
+            var data = db.Categories.Count();
+            lb_SoLoaiSanPham.Text = data.ToString();
+
+        }
+
+        private void Form_Home_Load(object sender, EventArgs e)
+        {
+            CountEmployess();
+            CountWarehouses();
+            CountOrder();
+            CountCategories();
+        }
     }
 }

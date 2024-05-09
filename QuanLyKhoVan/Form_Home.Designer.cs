@@ -51,20 +51,45 @@
             this.btn_NhanVien = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_QuanLy = new System.Windows.Forms.Button();
             this.btn_About = new System.Windows.Forms.Button();
+            this.lb_KqSoNhanVien = new System.Windows.Forms.Label();
+            this.lb_KqSoKhoHang = new System.Windows.Forms.Label();
+            this.lb_KqSoDonHang = new System.Windows.Forms.Label();
+            this.lb_SoLoaiSanPham = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel4
             // 
@@ -124,11 +149,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(593, 341);
+            this.dataGridView1.Size = new System.Drawing.Size(609, 300);
             this.dataGridView1.TabIndex = 9;
             // 
             // comboBox1
@@ -148,9 +173,9 @@
             "Danh sách Phiếu nhập",
             "Danh sách Phiếu xuất ",
             "Danh sách Kiểm Kê"});
-            this.comboBox1.Location = new System.Drawing.Point(85, 44);
+            this.comboBox1.Location = new System.Drawing.Point(121, 34);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(443, 33);
+            this.comboBox1.Size = new System.Drawing.Size(371, 33);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -159,9 +184,9 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(51, 89);
+            this.panel3.Location = new System.Drawing.Point(92, 378);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(657, 456);
+            this.panel3.Size = new System.Drawing.Size(650, 400);
             this.panel3.TabIndex = 15;
             // 
             // panel2
@@ -383,6 +408,134 @@
             this.panel5.Size = new System.Drawing.Size(1582, 65);
             this.panel5.TabIndex = 16;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.panel6.Controls.Add(this.lb_KqSoNhanVien);
+            this.panel6.Controls.Add(this.pictureBox3);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Location = new System.Drawing.Point(62, 117);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(293, 140);
+            this.panel6.TabIndex = 17;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.panel7.Controls.Add(this.lb_SoLoaiSanPham);
+            this.panel7.Controls.Add(this.pictureBox4);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Location = new System.Drawing.Point(450, 117);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(293, 140);
+            this.panel7.TabIndex = 18;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel8.Controls.Add(this.lb_KqSoKhoHang);
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Controls.Add(this.pictureBox1);
+            this.panel8.Location = new System.Drawing.Point(1226, 117);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(293, 140);
+            this.panel8.TabIndex = 19;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
+            this.panel9.Controls.Add(this.lb_KqSoDonHang);
+            this.panel9.Controls.Add(this.pictureBox2);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Location = new System.Drawing.Point(838, 117);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(293, 140);
+            this.panel9.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(142, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 28);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Số đơn hàng ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(130, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 28);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Số nhân viên ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(99, 89);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 28);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Số loại sản phẩm ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(143, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 28);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Số kho hàng ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyKhoVan.Properties.Resources.ic_warehouse;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::QuanLyKhoVan.Properties.Resources.ic_Orders;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::QuanLyKhoVan.Properties.Resources.ic_Invetory;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::QuanLyKhoVan.Properties.Resources.ic_people;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 45);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(90, 90);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
             // btn_QuanLy
             // 
             this.btn_QuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -391,10 +544,10 @@
             this.btn_QuanLy.ForeColor = System.Drawing.Color.White;
             this.btn_QuanLy.Image = global::QuanLyKhoVan.Properties.Resources.ic_menu_white;
             this.btn_QuanLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QuanLy.Location = new System.Drawing.Point(3, 7);
+            this.btn_QuanLy.Location = new System.Drawing.Point(8, 7);
             this.btn_QuanLy.Name = "btn_QuanLy";
             this.btn_QuanLy.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_QuanLy.Size = new System.Drawing.Size(249, 48);
+            this.btn_QuanLy.Size = new System.Drawing.Size(244, 48);
             this.btn_QuanLy.TabIndex = 2;
             this.btn_QuanLy.Text = "Quản lý ";
             this.btn_QuanLy.UseVisualStyleBackColor = false;
@@ -413,25 +566,97 @@
             this.btn_About.UseVisualStyleBackColor = false;
             this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
             // 
+            // lb_KqSoNhanVien
+            // 
+            this.lb_KqSoNhanVien.AutoSize = true;
+            this.lb_KqSoNhanVien.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_KqSoNhanVien.ForeColor = System.Drawing.Color.White;
+            this.lb_KqSoNhanVien.Location = new System.Drawing.Point(165, 22);
+            this.lb_KqSoNhanVien.Name = "lb_KqSoNhanVien";
+            this.lb_KqSoNhanVien.Size = new System.Drawing.Size(69, 54);
+            this.lb_KqSoNhanVien.TabIndex = 24;
+            this.lb_KqSoNhanVien.Text = "33";
+            // 
+            // lb_KqSoKhoHang
+            // 
+            this.lb_KqSoKhoHang.AutoSize = true;
+            this.lb_KqSoKhoHang.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_KqSoKhoHang.ForeColor = System.Drawing.Color.White;
+            this.lb_KqSoKhoHang.Location = new System.Drawing.Point(199, 22);
+            this.lb_KqSoKhoHang.Name = "lb_KqSoKhoHang";
+            this.lb_KqSoKhoHang.Size = new System.Drawing.Size(69, 54);
+            this.lb_KqSoKhoHang.TabIndex = 25;
+            this.lb_KqSoKhoHang.Text = "33";
+            // 
+            // lb_KqSoDonHang
+            // 
+            this.lb_KqSoDonHang.AutoSize = true;
+            this.lb_KqSoDonHang.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_KqSoDonHang.ForeColor = System.Drawing.Color.White;
+            this.lb_KqSoDonHang.Location = new System.Drawing.Point(197, 22);
+            this.lb_KqSoDonHang.Name = "lb_KqSoDonHang";
+            this.lb_KqSoDonHang.Size = new System.Drawing.Size(69, 54);
+            this.lb_KqSoDonHang.TabIndex = 26;
+            this.lb_KqSoDonHang.Text = "33";
+            // 
+            // lb_SoLoaiSanPham
+            // 
+            this.lb_SoLoaiSanPham.AutoSize = true;
+            this.lb_SoLoaiSanPham.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoLoaiSanPham.ForeColor = System.Drawing.Color.White;
+            this.lb_SoLoaiSanPham.Location = new System.Drawing.Point(201, 22);
+            this.lb_SoLoaiSanPham.Name = "lb_SoLoaiSanPham";
+            this.lb_SoLoaiSanPham.Size = new System.Drawing.Size(69, 54);
+            this.lb_SoLoaiSanPham.TabIndex = 27;
+            this.lb_SoLoaiSanPham.Text = "33";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Location = new System.Drawing.Point(854, 378);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(650, 400);
+            this.panel10.TabIndex = 16;
+            // 
             // Form_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1582, 822);
-            this.Controls.Add(this.panel1);
+            this.ControlBox = false;
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Home";
+            this.Load += new System.EventHandler(this.Form_Home_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -461,5 +686,22 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_About;
         private System.Windows.Forms.Button btn_QuanLy;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lb_KqSoNhanVien;
+        private System.Windows.Forms.Label lb_SoLoaiSanPham;
+        private System.Windows.Forms.Label lb_KqSoKhoHang;
+        private System.Windows.Forms.Label lb_KqSoDonHang;
+        private System.Windows.Forms.Panel panel10;
     }
 }
