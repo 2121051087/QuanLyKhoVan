@@ -201,10 +201,7 @@ namespace QuanLyKhoVan
         }
         #endregion
 
-        private void btn_View_Click(object sender, EventArgs e)
-        {
-          
-        }
+
 
 
 
@@ -263,8 +260,7 @@ namespace QuanLyKhoVan
             Form_Login form_Login = new Form_Login();
             form_Login.ShowDialog();
 
-            this.Show();
-            form_Login.FormClosed += (s, args) => this.Show();
+            
         }
         #region Xu li UI 
 
@@ -279,10 +275,149 @@ namespace QuanLyKhoVan
                 panel4.Visible = false;
             }
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void ShowQuanLy()
         {
-            ShowAboutInfo(); 
+            if (panel1.Visible == false)
+            {
+                panel1.Visible = true;
+            }
+            else
+            {
+                panel1.Visible = false;
+            }
         }
         #endregion
+        private bool check;
+
+
+        private void btn_About_Click(object sender, EventArgs e)
+        {
+            ShowAboutInfo();
+        }
+
+        private void btn_QuanLy_Click(object sender, EventArgs e)
+        {
+            ShowQuanLy();
+        }
+        #region Xử lí  điều hướng form quản lí 
+
+        private void btn_SanPham_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Products form_Products = new Form_Products();
+            form_Products.ShowDialog();
+
+            this.Show();
+            form_Products.FormClosed += (s, args) => this.Show();
+        }
+
+      
+
+        private void btn_DanhMuc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Categories form_Categories = new Form_Categories();
+            form_Categories.ShowDialog();
+
+            this.Show();
+            form_Categories.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btn_DonHang_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Order form_Orders = new Form_Order();
+            form_Orders.ShowDialog();
+
+            this.Show();
+            form_Orders.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btn_KhachHang_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Customers form_Customers = new Form_Customers();
+            form_Customers.ShowDialog();
+
+            this.Show();
+            form_Customers.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btn_NhanVien_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Employees form_Employees = new Form_Employees();
+            form_Employees.ShowDialog();
+
+            this.Show();
+            form_Employees.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btn_VanChuyen_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Shipment form_Shipments = new Form_Shipment();
+            form_Shipments.ShowDialog();
+
+            this.Show();
+            form_Shipments.FormClosed += (s, args) => this.Show();
+
+        }
+
+        private void btn_Kho_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Warehouses form_Warehouses = new Form_Warehouses();
+            form_Warehouses.ShowDialog();
+
+            this.Show();
+            form_Warehouses.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btn_NhaCungCap_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Supplies form_Suppliers = new Form_Supplies();
+            form_Suppliers.ShowDialog();
+
+            this.Show();
+            form_Suppliers.FormClosed += (s, args) => this.Show();
+        }
+
+        private void btn_PhieuNhap_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Incoming_Shipments form_Incoming_Shipments = new Form_Incoming_Shipments();
+            form_Incoming_Shipments.ShowDialog();
+
+            this.Show();
+            form_Incoming_Shipments.FormClosed += (s, args) => this.Show();
+
+        }
+
+        private void btn_PhieuXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Outgoing_Shipments form_Outgoing_Shipments = new Form_Outgoing_Shipments();
+            form_Outgoing_Shipments.ShowDialog();
+
+            this.Show();
+            form_Outgoing_Shipments.FormClosed += (s, args) => this.Show();
+
+        }
+
+        private void btn_KiemKe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_InventoryChecks form_Inventory_Checks = new Form_InventoryChecks();
+            form_Inventory_Checks.ShowDialog();
+
+            this.Show();
+            form_Inventory_Checks.FormClosed += (s, args) => this.Show();
+
+        }
+        #endregion
+
+
     }
 }

@@ -123,6 +123,16 @@ namespace QuanLyKhoVan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_menu_white {
+            get {
+                object obj = ResourceManager.GetObject("ic_menu_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_Password {
             get {
                 object obj = ResourceManager.GetObject("ic_Password", resourceCulture);
