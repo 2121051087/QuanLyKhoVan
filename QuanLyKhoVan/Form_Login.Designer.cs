@@ -39,23 +39,23 @@
             this.btn_SignUp = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_ForgetPassWord = new System.Windows.Forms.Button();
+            this.btn_Login = new System.Windows.Forms.Button();
             this.panel_password = new System.Windows.Forms.Panel();
             this.txt_password = new System.Windows.Forms.TextBox();
+            this.pic_password = new System.Windows.Forms.PictureBox();
             this.panel_account = new System.Windows.Forms.Panel();
             this.txt_account = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Login = new System.Windows.Forms.Button();
-            this.pic_password = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel_password.SuspendLayout();
-            this.panel_account.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_password)).BeginInit();
+            this.panel_account.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +150,7 @@
             // btn_SignUp
             // 
             this.btn_SignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_SignUp.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_SignUp.FlatAppearance.BorderSize = 0;
             this.btn_SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SignUp.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,6 +176,7 @@
             this.panel2.Controls.Add(this.panel_password);
             this.panel2.Controls.Add(this.panel_account);
             this.panel2.Controls.Add(this.label6);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(347, 0);
             this.panel2.MinimumSize = new System.Drawing.Size(436, 530);
@@ -197,6 +199,24 @@
             this.btn_ForgetPassWord.UseVisualStyleBackColor = false;
             this.btn_ForgetPassWord.Click += new System.EventHandler(this.btn_ForgetPassWord_Click);
             // 
+            // btn_Login
+            // 
+            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
+            this.btn_Login.FlatAppearance.BorderSize = 0;
+            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Login.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.ForeColor = System.Drawing.Color.White;
+            this.btn_Login.Image = global::QuanLyKhoVan.Properties.Resources.ic_Login;
+            this.btn_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Login.Location = new System.Drawing.Point(114, 375);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_Login.Size = new System.Drawing.Size(218, 44);
+            this.btn_Login.TabIndex = 9;
+            this.btn_Login.Text = "LOGIN";
+            this.btn_Login.UseVisualStyleBackColor = false;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            // 
             // panel_password
             // 
             this.panel_password.BackColor = System.Drawing.Color.White;
@@ -210,6 +230,7 @@
             // txt_password
             // 
             this.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_password.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
             this.txt_password.Location = new System.Drawing.Point(79, 11);
@@ -218,6 +239,18 @@
             this.txt_password.TabIndex = 1;
             this.txt_password.UseSystemPasswordChar = true;
             this.txt_password.Click += new System.EventHandler(this.txt_password_Click);
+            // 
+            // pic_password
+            // 
+            this.pic_password.Image = global::QuanLyKhoVan.Properties.Resources.ic_Password;
+            this.pic_password.Location = new System.Drawing.Point(15, 3);
+            this.pic_password.Name = "pic_password";
+            this.pic_password.Size = new System.Drawing.Size(48, 48);
+            this.pic_password.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_password.TabIndex = 0;
+            this.pic_password.TabStop = false;
+            this.pic_password.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pic_password_MouseDown);
+            this.pic_password.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pic_password_MouseUp);
             // 
             // panel_account
             // 
@@ -239,6 +272,16 @@
             this.txt_account.Size = new System.Drawing.Size(330, 32);
             this.txt_account.TabIndex = 1;
             this.txt_account.Click += new System.EventHandler(this.txt_account_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::QuanLyKhoVan.Properties.Resources.ic_account;
+            this.pictureBox2.Location = new System.Drawing.Point(15, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // label6
             // 
@@ -271,52 +314,13 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.MinimumSize = new System.Drawing.Size(324, 530);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(346, 550);
             this.panel1.TabIndex = 4;
-            // 
-            // btn_Login
-            // 
-            this.btn_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
-            this.btn_Login.FlatAppearance.BorderSize = 0;
-            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Login.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.ForeColor = System.Drawing.Color.White;
-            this.btn_Login.Image = global::QuanLyKhoVan.Properties.Resources.ic_Login;
-            this.btn_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Login.Location = new System.Drawing.Point(114, 375);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_Login.Size = new System.Drawing.Size(218, 44);
-            this.btn_Login.TabIndex = 9;
-            this.btn_Login.Text = "LOGIN";
-            this.btn_Login.UseVisualStyleBackColor = false;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
-            // 
-            // pic_password
-            // 
-            this.pic_password.Image = global::QuanLyKhoVan.Properties.Resources.ic_Password;
-            this.pic_password.Location = new System.Drawing.Point(15, 3);
-            this.pic_password.Name = "pic_password";
-            this.pic_password.Size = new System.Drawing.Size(48, 48);
-            this.pic_password.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_password.TabIndex = 0;
-            this.pic_password.TabStop = false;
-            this.pic_password.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pic_password_MouseDown);
-            this.pic_password.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pic_password_MouseUp);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::QuanLyKhoVan.Properties.Resources.ic_account;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -333,8 +337,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 550);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.No;
             this.MaximumSize = new System.Drawing.Size(818, 597);
             this.MinimumSize = new System.Drawing.Size(818, 597);
             this.Name = "Form_Login";
@@ -343,12 +349,12 @@
             this.panel2.PerformLayout();
             this.panel_password.ResumeLayout(false);
             this.panel_password.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_password)).EndInit();
             this.panel_account.ResumeLayout(false);
             this.panel_account.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_password)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

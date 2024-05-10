@@ -274,12 +274,12 @@ namespace QuanLyKhoVan
             {
                 panel4.Visible = true;
                 panel4.BringToFront();
-                this.BackColor = Color.DarkGray;
+               
             }
             else
             {
                 panel4.Visible = false;
-                this.BackColor = Color.WhiteSmoke;
+               
             }
         }
        
