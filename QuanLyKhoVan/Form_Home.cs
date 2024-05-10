@@ -282,6 +282,10 @@ namespace QuanLyKhoVan
                 this.BackColor = Color.WhiteSmoke;
             }
         }
+       
+
+
+
         private void ShowQuanLy()
         {
             if (panel1.Visible == false)
