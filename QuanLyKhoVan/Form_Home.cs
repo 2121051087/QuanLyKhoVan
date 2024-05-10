@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -272,10 +273,13 @@ namespace QuanLyKhoVan
             if (panel4.Visible == false)
             {
                 panel4.Visible = true;
+                panel4.BringToFront();
+                this.BackColor = Color.DarkGray;
             }
             else
             {
                 panel4.Visible = false;
+                this.BackColor = Color.WhiteSmoke;
             }
         }
         private void ShowQuanLy()
@@ -437,20 +441,20 @@ namespace QuanLyKhoVan
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //panel3.Invoke((MethodInvoker)(() =>
-            //{
-            //    if (check)
-            //    {
-            //        panel3.Left -= 150;
-            //    }
-            //    else
-            //    {
-            //        panel3.Left += 150;
-            //    }
+        //    panel3.Invoke((MethodInvoker)(() =>
+        //    {
+        //        if (check)
+        //        {
+        //            panel3.Left -= 150;
+        //        }
+        //        else
+        //        {
+        //            panel3.Left += 150;
+        //        }
 
-            //    timer1.Stop();
-            //    check = !check;
-            //}));
+        //        timer1.Stop();
+        //        check = !check;
+        //    }));
         }
         void CountEmployess()
         {
@@ -486,34 +490,42 @@ namespace QuanLyKhoVan
         }
 
 
+      
         void InventoryChart()
         {
-            var invertory = (from p in db.Products
-                             join o in db.Order_Details on p.Product_ID equals o.Product_ID into poGroup
-                             from po in poGroup.DefaultIfEmpty()
+            //var inventory = (from p in db.Products
+            //                 join o in db.Order_Details on p.Product_ID equals o.Product_ID into poGroup
+            //                 from po in poGroup.DefaultIfEmpty()
+            //                 select new
+            //                 {
+            //                     Product_ID = p.Product_ID,
+            //                     invertory = p.SoLuong - (po.SoLuongSanPham == null ? 0 : po.SoLuongSanPham)
+
+            //                 }).ToList();
+
+
+            // Thay đổi loại biểu đồ từ Column sang Pie
+            var inventory = (from p in db.Products
                              select new
                              {
                                  Product_ID = p.Product_ID,
-                                 invertory = p.SoLuong - (po.SoLuongSanPham == null ? 0 : po.SoLuongSanPham)
-                      
+                                 inventory = p.SoLuong - (db.Order_Details.Any(o => o.Product_ID == p.Product_ID) ? db.Order_Details.Where(o => o.Product_ID == p.Product_ID).Sum(o => o.SoLuongSanPham) : 0)
                              }).ToList();
 
             if (chart1.Series.IndexOf("Inventory") == -1)
             {
                 chart1.Series.Add("Inventory");
-                foreach (var item in invertory)
+                foreach (var item in inventory)
                 {
-                    chart1.Series["Inventory"].Points.AddXY(item.Product_ID, item.invertory);
+                    chart1.Series["Inventory"].Points.AddXY(item.Product_ID, item.inventory);
                 }
             };
 
-          
-
-            chart1.Series["Inventory"].ChartType = SeriesChartType.Column;
+           
+            chart1.Series["Inventory"].ChartType = SeriesChartType.Pie;
             chart1.ChartAreas[0].AxisX.Title = "Sản phẩm ";
             chart1.ChartAreas[0].AxisY.Title = "Số lượng tồn ";
             chart1.ChartAreas[0].AxisX.Interval = 1;
-
         }
 
         private void btn_ReloadForm_Click(object sender, EventArgs e)
@@ -523,6 +535,17 @@ namespace QuanLyKhoVan
             form_Home.ShowDialog();
 
            
+        }
+
+        private void chart1_MouseMove(object sender, MouseEventArgs e)
+        {
+            var result = chart1.HitTest(e.X, e.Y);
+            if (result.ChartElementType == ChartElementType.DataPoint)
+            {
+                var dataPoint = result.Series.Points[result.PointIndex];
+                var inventory = dataPoint.YValues[0];
+                MessageBox.Show($"Số lượng tồn: {inventory}");
+            }
         }
     }
 }
