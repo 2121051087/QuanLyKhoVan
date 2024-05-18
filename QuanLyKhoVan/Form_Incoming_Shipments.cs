@@ -34,8 +34,7 @@ namespace QuanLyKhoVan
             panel_SupplierID.BackColor = SystemColors.Control;
             txt_NgayNhapHang.BackColor = SystemColors.Control;
             panel_NgayNhapHang.BackColor = SystemColors.Control;
-            txt_status.BackColor = SystemColors.Control;
-            panel_status.BackColor = SystemColors.Control;
+          
 
         }
 
@@ -49,8 +48,7 @@ namespace QuanLyKhoVan
             panel_SupplierID.BackColor = SystemColors.Control;
             txt_NgayNhapHang.BackColor = SystemColors.Control;
             panel_NgayNhapHang.BackColor = SystemColors.Control;
-            txt_status.BackColor = SystemColors.Control;
-            panel_status.BackColor = SystemColors.Control;
+           
                 
 
         }
@@ -65,8 +63,7 @@ namespace QuanLyKhoVan
             panel_WarehouseID.BackColor = SystemColors.Control;
             txt_NgayNhapHang.BackColor = SystemColors.Control;
             panel_NgayNhapHang.BackColor = SystemColors.Control;
-            txt_status.BackColor = SystemColors.Control;
-            panel_status.BackColor = SystemColors.Control;
+       
         }
 
         private void txt_NgayNhapHang_Click(object sender, EventArgs e)
@@ -79,24 +76,10 @@ namespace QuanLyKhoVan
             panel_WarehouseID.BackColor = SystemColors.Control;
             txt_SupplierID.BackColor = SystemColors.Control;
             panel_SupplierID.BackColor = SystemColors.Control;
-            txt_status.BackColor = SystemColors.Control;
-            panel_status.BackColor = SystemColors.Control;
-
+         
         }
 
-        private void txt_status_Click(object sender, EventArgs e)
-        {
-            txt_status.BackColor = Color.White;
-            panel_status.BackColor = Color.White;
-            txt_status.BackColor = SystemColors.Control;
-            panel_status.BackColor = SystemColors.Control;
-            txt_ShipmentID.BackColor = SystemColors.Control;
-            panel_ShipmentID.BackColor = SystemColors.Control;
-            txt_WarehouseID.BackColor = SystemColors.Control;
-            panel_WarehouseID.BackColor = SystemColors.Control;
-            txt_SupplierID.BackColor = SystemColors.Control;
-            panel_SupplierID.BackColor = SystemColors.Control;
-        }
+       
         #endregion
 
         QuanLyKhoVan db = new QuanLyKhoVan();
@@ -108,7 +91,7 @@ namespace QuanLyKhoVan
             txt_ShipmentID.Text = "";
             txt_WarehouseID.Text = "";
             txt_SupplierID.Text = "";
-            txt_status.Text = "";
+         
         }
         void LoadData()
         {
@@ -119,7 +102,7 @@ namespace QuanLyKhoVan
                            WarehouseID = p.Warehouse_ID,
                            SupplierID = p.Supplier_ID,
                            NgayNhapHang = p.NgayNhapHang,
-                           status = p.status
+                         
                        };
             dataGridView1.DataSource = data.ToList();
         }
@@ -131,7 +114,7 @@ namespace QuanLyKhoVan
             incoming_Shipments.Warehouse_ID = int.Parse(txt_WarehouseID.Text);
             incoming_Shipments.Supplier_ID = int.Parse(txt_SupplierID.Text);
             incoming_Shipments.NgayNhapHang = DateTime.Parse(txt_NgayNhapHang.Text);
-            incoming_Shipments.status = txt_status.Text;
+        
             db.Incoming_Shipments.Add(incoming_Shipments);
             db.SaveChanges();
             LoadData();
@@ -145,7 +128,7 @@ namespace QuanLyKhoVan
             incoming_Shipments.Warehouse_ID = int.Parse(txt_WarehouseID.Text);
             incoming_Shipments.Supplier_ID = int.Parse(txt_SupplierID.Text);
             incoming_Shipments.NgayNhapHang = DateTime.Parse(txt_NgayNhapHang.Text);
-            incoming_Shipments.status = txt_status.Text;
+          
             db.SaveChanges();
             LoadData();
             ClearTextBox();
@@ -168,13 +151,13 @@ namespace QuanLyKhoVan
             txt_WarehouseID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txt_SupplierID.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txt_NgayNhapHang.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txt_status.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+           
 
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if(txt_NgayNhapHang.Text == "" || txt_ShipmentID.Text == "" || txt_WarehouseID.Text == "" || txt_SupplierID.Text == "" || txt_status.Text == "")
+            if(txt_NgayNhapHang.Text == "" || txt_ShipmentID.Text == "" || txt_WarehouseID.Text == "" || txt_SupplierID.Text == "" )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
@@ -231,6 +214,17 @@ namespace QuanLyKhoVan
                     MessageBox.Show("Xóa thất bại" + ex);
                 }
             }
+        }
+
+        private void btn_ChiTietNhap_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Incoming_Shipment_Detail form_Incoming_Shipment_Detail = new Form_Incoming_Shipment_Detail();
+            form_Incoming_Shipment_Detail.ShowDialog();
+
+            this.Show();
+            form_Incoming_Shipment_Detail.FormClosed += (s,args) => this.Show();
+
         }
     }
 }

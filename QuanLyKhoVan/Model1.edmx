@@ -37,6 +37,15 @@
           <Property Name="TenNhanVien" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Incoming_Shipment_Detail">
+          <Key>
+            <PropertyRef Name="Detail_ID" />
+          </Key>
+          <Property Name="Detail_ID" Type="int" Nullable="false" />
+          <Property Name="Shipment_ID" Type="int" />
+          <Property Name="SoMatHangNhap" Type="int" />
+          <Property Name="TongTIenHang" Type="int" />
+        </EntityType>
         <EntityType Name="Incoming_Shipments">
           <Key>
             <PropertyRef Name="Shipment_ID" />
@@ -45,7 +54,6 @@
           <Property Name="Warehouse_ID" Type="int" />
           <Property Name="Supplier_ID" Type="int" />
           <Property Name="NgayNhapHang" Type="datetime" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Inventory_Checks">
           <Key>
@@ -133,6 +141,18 @@
           <Property Name="Warehouse_ID" Type="int" Nullable="false" />
           <Property Name="DiaDiem" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_Incoming_Shipment_Detail_Incoming_Shipments">
+          <End Role="Incoming_Shipments" Type="Self.Incoming_Shipments" Multiplicity="0..1" />
+          <End Role="Incoming_Shipment_Detail" Type="Self.Incoming_Shipment_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incoming_Shipments">
+              <PropertyRef Name="Shipment_ID" />
+            </Principal>
+            <Dependent Role="Incoming_Shipment_Detail">
+              <PropertyRef Name="Shipment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Incoming_Shipments_Suppliers">
           <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
           <End Role="Incoming_Shipments" Type="Self.Incoming_Shipments" Multiplicity="*" />
@@ -313,6 +333,7 @@
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Incoming_Shipment_Detail" EntityType="Self.Incoming_Shipment_Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Incoming_Shipments" EntityType="Self.Incoming_Shipments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inventory_Checks" EntityType="Self.Inventory_Checks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
@@ -323,6 +344,10 @@
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Warehouses" EntityType="Self.Warehouses" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Incoming_Shipment_Detail_Incoming_Shipments" Association="Self.FK_Incoming_Shipment_Detail_Incoming_Shipments">
+            <End Role="Incoming_Shipments" EntitySet="Incoming_Shipments" />
+            <End Role="Incoming_Shipment_Detail" EntitySet="Incoming_Shipment_Detail" />
+          </AssociationSet>
           <AssociationSet Name="FK_Incoming_Shipments_Suppliers" Association="Self.FK_Incoming_Shipments_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Incoming_Shipments" EntitySet="Incoming_Shipments" />
@@ -420,9 +445,9 @@
           <Property Name="Warehouse_ID" Type="Int32" />
           <Property Name="Supplier_ID" Type="Int32" />
           <Property Name="NgayNhapHang" Type="DateTime" Precision="3" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Suppliers" Relationship="Self.FK_Incoming_Shipments_Suppliers" FromRole="Incoming_Shipments" ToRole="Suppliers" />
           <NavigationProperty Name="Warehouses" Relationship="Self.FK_Incoming_Shipments_Warehouses" FromRole="Incoming_Shipments" ToRole="Warehouses" />
+          <NavigationProperty Name="Incoming_Shipment_Detail" Relationship="QuanLyKhoVanModel.FK_Incoming_Shipment_Detail_Incoming_Shipments" FromRole="Incoming_Shipments" ToRole="Incoming_Shipment_Detail" />
         </EntityType>
         <EntityType Name="Inventory_Checks">
           <Key>
@@ -765,6 +790,11 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Incoming_Shipment_Detail" EntityType="QuanLyKhoVanModel.Incoming_Shipment_Detail" />
+          <AssociationSet Name="FK_Incoming_Shipment_Detail_Incoming_Shipments" Association="QuanLyKhoVanModel.FK_Incoming_Shipment_Detail_Incoming_Shipments">
+            <End Role="Incoming_Shipments" EntitySet="Incoming_Shipments" />
+            <End Role="Incoming_Shipment_Detail" EntitySet="Incoming_Shipment_Detail" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -777,6 +807,28 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Incoming_Shipment_Detail">
+          <Key>
+            <PropertyRef Name="Detail_ID" />
+          </Key>
+          <Property Name="Detail_ID" Type="Int32" Nullable="false" />
+          <Property Name="Shipment_ID" Type="Int32" />
+          <NavigationProperty Name="Incoming_Shipments" Relationship="QuanLyKhoVanModel.FK_Incoming_Shipment_Detail_Incoming_Shipments" FromRole="Incoming_Shipment_Detail" ToRole="Incoming_Shipments" />
+          <Property Name="SoMatHangNhap" Type="Int32" />
+          <Property Name="TongTIenHang" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Incoming_Shipment_Detail_Incoming_Shipments">
+          <End Type="QuanLyKhoVanModel.Incoming_Shipments" Role="Incoming_Shipments" Multiplicity="0..1" />
+          <End Type="QuanLyKhoVanModel.Incoming_Shipment_Detail" Role="Incoming_Shipment_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incoming_Shipments">
+              <PropertyRef Name="Shipment_ID" />
+            </Principal>
+            <Dependent Role="Incoming_Shipment_Detail">
+              <PropertyRef Name="Shipment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -826,7 +878,6 @@
                 <ScalarProperty Name="Warehouse_ID" ColumnName="Warehouse_ID" />
                 <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
                 <ScalarProperty Name="NgayNhapHang" ColumnName="NgayNhapHang" />
-                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -949,6 +1000,16 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyKhoVanModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyKhoVanModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Incoming_Shipment_Detail">
+            <EntityTypeMapping TypeName="QuanLyKhoVanModel.Incoming_Shipment_Detail">
+              <MappingFragment StoreEntitySet="Incoming_Shipment_Detail">
+                <ScalarProperty Name="TongTIenHang" ColumnName="TongTIenHang" />
+                <ScalarProperty Name="SoMatHangNhap" ColumnName="SoMatHangNhap" />
+                <ScalarProperty Name="Shipment_ID" ColumnName="Shipment_ID" />
+                <ScalarProperty Name="Detail_ID" ColumnName="Detail_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

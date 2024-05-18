@@ -33,6 +33,8 @@
         <AssociationConnector Association="QuanLyKhoVanModel.FK_Order_Details_Products" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyKhoVanModel.FK_Outgoing_Shipments_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyKhoVanModel.FK_Outgoing_Shipments_Warehouses" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyKhoVanModel.Incoming_Shipment_Detail" Width="1.5" PointX="10.5" PointY="11.625" />
+        <AssociationConnector Association="QuanLyKhoVanModel.FK_Incoming_Shipment_Detail_Incoming_Shipments" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

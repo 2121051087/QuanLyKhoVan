@@ -28,7 +28,9 @@ namespace QuanLyKhoVan
         QuanLyKhoVan db = new QuanLyKhoVan();
 
 
-        #region Method Load Data table
+
+        #region Method Load Data in DataGridView 
+
         void LoadDataCustomer()
         {
             var data = from c in db.Customers
@@ -93,7 +95,7 @@ namespace QuanLyKhoVan
                            WarehouseID = p.Warehouse_ID,
                            SupplierID = p.Supplier_ID,
                            NgayNhapHang = p.NgayNhapHang,
-                           status = p.status
+                          
                        };
             dataGridView1.DataSource = data.ToList();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -297,22 +299,19 @@ namespace QuanLyKhoVan
                 panel1.Visible = false;
             }
         }
+            private bool check;
+
+            private void btn_About_Click(object sender, EventArgs e)
+            {
+                ShowAboutInfo();
+            }
+
+            private void btn_QuanLy_Click(object sender, EventArgs e)
+            {
+                ShowQuanLy();
+                timer1.Start();
+            }
         #endregion
-        private bool check;
-
-
-
-
-        private void btn_About_Click(object sender, EventArgs e)
-        {
-            ShowAboutInfo();
-        }
-
-        private void btn_QuanLy_Click(object sender, EventArgs e)
-        {
-            ShowQuanLy();
-            timer1.Start();
-        }
 
 
         #region Xử lí  điều hướng form quản lí 
@@ -362,7 +361,7 @@ namespace QuanLyKhoVan
         private void btn_NhanVien_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_Employees form_Employees = new Form_Employees();
+            Form_Employeers form_Employees = new Form_Employeers();
             form_Employees.ShowDialog();
 
             this.Show();
@@ -441,6 +440,14 @@ namespace QuanLyKhoVan
             this.Show();
             form_OrderDetails.FormClosed += (s, args) => this.Show();
         }
+        private void btn_ReloadForm_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Home form_Home = new Form_Home();
+            form_Home.ShowDialog();
+
+           
+        }
         #endregion
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -460,6 +467,9 @@ namespace QuanLyKhoVan
         //        check = !check;
         //    }));
         }
+
+        #region thống kê 
+
         void CountEmployess()
         {
             var data = db.Employees.Count();
@@ -483,6 +493,7 @@ namespace QuanLyKhoVan
             lb_SoLoaiSanPham.Text = data.ToString();
 
         }
+        #endregion
 
         private void Form_Home_Load(object sender, EventArgs e)
         {
@@ -532,14 +543,6 @@ namespace QuanLyKhoVan
             chart1.ChartAreas[0].AxisX.Interval = 1;
         }
 
-        private void btn_ReloadForm_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form_Home form_Home = new Form_Home();
-            form_Home.ShowDialog();
-
-           
-        }
 
         private void chart1_MouseMove(object sender, MouseEventArgs e)
         {

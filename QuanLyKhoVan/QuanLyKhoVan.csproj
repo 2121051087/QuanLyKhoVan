@@ -80,11 +80,11 @@
     <Compile Include="Form_Customers.Designer.cs">
       <DependentUpon>Form_Customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Employees.cs">
+    <Compile Include="Form_Employeers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Employees.Designer.cs">
-      <DependentUpon>Form_Employees.cs</DependentUpon>
+    <Compile Include="Form_Employeers.Designer.cs">
+      <DependentUpon>Form_Employeers.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_ForgetPassword.cs">
       <SubType>Form</SubType>
@@ -104,11 +104,23 @@
     <Compile Include="Form_Incoming_Shipments.Designer.cs">
       <DependentUpon>Form_Incoming_Shipments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Incoming_Shipment_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Incoming_Shipment_Detail.Designer.cs">
+      <DependentUpon>Form_Incoming_Shipment_Detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_InventoryChecks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_InventoryChecks.Designer.cs">
       <DependentUpon>Form_InventoryChecks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_itemShipmentDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_itemShipmentDetail.Designer.cs">
+      <DependentUpon>Form_itemShipmentDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -167,6 +179,9 @@
     <Compile Include="Incoming_Shipments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Incoming_Shipment_Detail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Inventory_Checks.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -223,8 +238,8 @@
     <EmbeddedResource Include="Form_Customers.resx">
       <DependentUpon>Form_Customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Employees.resx">
-      <DependentUpon>Form_Employees.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Employeers.resx">
+      <DependentUpon>Form_Employeers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ForgetPassword.resx">
       <DependentUpon>Form_ForgetPassword.cs</DependentUpon>
@@ -235,8 +250,14 @@
     <EmbeddedResource Include="Form_Incoming_Shipments.resx">
       <DependentUpon>Form_Incoming_Shipments.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Incoming_Shipment_Detail.resx">
+      <DependentUpon>Form_Incoming_Shipment_Detail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_InventoryChecks.resx">
       <DependentUpon>Form_InventoryChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_itemShipmentDetail.resx">
+      <DependentUpon>Form_itemShipmentDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -308,6 +329,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ic_down.png" />
+    <None Include="Resources\ic_cross.png" />
+    <None Include="Resources\ic_save_24.png" />
+    <None Include="Resources\ic_save.png" />
+    <None Include="Resources\ic_add.png" />
     <None Include="Resources\reload.png" />
     <None Include="Resources\ic_reload.png" />
     <None Include="Resources\ic_Invetory.png" />

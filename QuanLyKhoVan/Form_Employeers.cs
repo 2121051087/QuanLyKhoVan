@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyKhoVan
 {
-    public partial class Form_Employees : Form
+    public partial class Form_Employeers : Form
     {
-        public Form_Employees()
+        public Form_Employeers()
         {
             InitializeComponent();
            

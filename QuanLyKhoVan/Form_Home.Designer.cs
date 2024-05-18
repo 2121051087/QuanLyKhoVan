@@ -77,6 +77,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.entityConnection1 = new System.Data.Entity.Core.EntityClient.EntityConnection();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -774,5 +775,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btn_DonHangChiTiet;
         private System.Windows.Forms.Button btn_ReloadForm;
+        private System.Data.Entity.Core.EntityClient.EntityConnection entityConnection1;
     }
 }

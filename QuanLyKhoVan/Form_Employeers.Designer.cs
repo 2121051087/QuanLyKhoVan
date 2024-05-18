@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhoVan
 {
-    partial class Form_Employees
+    partial class Form_Employeers
     {
         /// <summary>
         /// Required designer variable.

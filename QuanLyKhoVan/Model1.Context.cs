@@ -41,6 +41,7 @@ namespace QuanLyKhoVan
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Warehouses> Warehouses { get; set; }
+        public virtual DbSet<Incoming_Shipment_Detail> Incoming_Shipment_Detail { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
