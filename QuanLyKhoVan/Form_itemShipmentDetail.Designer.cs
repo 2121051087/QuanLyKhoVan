@@ -227,6 +227,7 @@
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Name = "Form_itemShipmentDetail";
             this.Text = "Form_itemShipmentDetial";
+
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
