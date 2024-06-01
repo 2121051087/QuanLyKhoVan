@@ -55,7 +55,7 @@ namespace QuanLyKhoVan
                 
         }
 
-        // Phương thức tính tổng giá trị ThanhTien cho một lô hà
+        // Phương thức tính tổng giá trị ThanhTien cho một lô hàng 
         private decimal GetThanhTien()
         {
             int shipmentId = int.Parse(lb_KQ_IDPhieuNhap.Text);
