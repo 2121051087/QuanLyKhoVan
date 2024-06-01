@@ -16,8 +16,22 @@ namespace QuanLyKhoVan
         {
             InitializeComponent();
             loadComboboxProductID();
+            txt_Detail_ID.Text = "0";
+            
         }
         QuanLyKhoVan db = new QuanLyKhoVan();
+
+        private Form_Incoming_Shipment_Detail form_Incoming_Shipment_Detail;
+        public Form_itemShipmentDetail(Form_Incoming_Shipment_Detail Form_Incoming_Shipment_Detail)
+        {
+            this.form_Incoming_Shipment_Detail = form_Incoming_Shipment_Detail;
+            
+        }
+        public int MethodGetShipmentID()
+        {
+           var shipmentID = form_Incoming_Shipment_Detail.GetShipmentID();
+            return shipmentID;
+        }
         void loadComboboxProductID()
         {
             var productID = (from p in db.Products
@@ -66,6 +80,16 @@ namespace QuanLyKhoVan
             SoLuongChanged?.Invoke();
         }
 
+
+        #region Dat cho textbox chi nhap so 
+
+        private void txt_Detail_ID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         private void txt_Soluong_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -73,6 +97,7 @@ namespace QuanLyKhoVan
                 e.Handled = true;
             }
         }
+        #endregion
 
         public event Action<Form_itemShipmentDetail> RequestRemove;
 
@@ -82,14 +107,14 @@ namespace QuanLyKhoVan
 
             // Thông báo cho Form_Incoming_Shipment_Detail
             SoLuongChanged?.Invoke();
-            
+
         }
         public event Action SoLuongChanged;
 
-        public decimal GetThanhTien()
+        public int GetThanhTien()
         {
-            decimal ThanhTien;
-            if (Decimal.TryParse(lb_ThanhTien.Text, out ThanhTien))
+            int  ThanhTien;
+            if (int.TryParse(lb_ThanhTien.Text, out ThanhTien))
             {
                 return ThanhTien;
             }
@@ -103,8 +128,15 @@ namespace QuanLyKhoVan
         {
             return int.Parse(comboBox_ProductID.Text);
         }
-
-       public int GetProductID()
+        public int GetProductId()
+        { 
+           return int.Parse(comboBox_ProductID.Text);
+        }
+        public int GetDetailID()
+        {
+            return int.Parse(txt_Detail_ID.Text);
+        }
+        public int GetProductID()
         {
             return int.Parse(comboBox_ProductID.Text);
         }
@@ -112,5 +144,8 @@ namespace QuanLyKhoVan
         {
             return int.Parse(txt_Soluong.Text);
         }
+
+        
+
     }
 }

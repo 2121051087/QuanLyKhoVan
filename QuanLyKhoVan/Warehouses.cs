@@ -24,6 +24,7 @@ namespace QuanLyKhoVan
     
         public int Warehouse_ID { get; set; }
         public string DiaDiem { get; set; }
+        public string TenKho { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Incoming_Shipments> Incoming_Shipments { get; set; }

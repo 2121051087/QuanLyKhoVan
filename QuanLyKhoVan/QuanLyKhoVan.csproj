@@ -98,12 +98,6 @@
     <Compile Include="Form_Home.Designer.cs">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Incoming_Shipments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Incoming_Shipments.Designer.cs">
-      <DependentUpon>Form_Incoming_Shipments.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_Incoming_Shipment_Detail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +115,12 @@
     </Compile>
     <Compile Include="Form_itemShipmentDetail.Designer.cs">
       <DependentUpon>Form_itemShipmentDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Item_IncomingShipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Item_IncomingShipment.Designer.cs">
+      <DependentUpon>Form_Item_IncomingShipment.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -146,11 +146,23 @@
     <Compile Include="Form_Outgoing_Shipments.Designer.cs">
       <DependentUpon>Form_Outgoing_Shipments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Incoming_Shipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Incoming_Shipment.Designer.cs">
+      <DependentUpon>Form_Incoming_Shipment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Products.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Products.Designer.cs">
       <DependentUpon>Form_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Purchase.Designer.cs">
+      <DependentUpon>Form_Purchase.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Shipment.cs">
       <SubType>Form</SubType>
@@ -247,9 +259,6 @@
     <EmbeddedResource Include="Form_Home.resx">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Incoming_Shipments.resx">
-      <DependentUpon>Form_Incoming_Shipments.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_Incoming_Shipment_Detail.resx">
       <DependentUpon>Form_Incoming_Shipment_Detail.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_itemShipmentDetail.resx">
       <DependentUpon>Form_itemShipmentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Item_IncomingShipment.resx">
+      <DependentUpon>Form_Item_IncomingShipment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -271,8 +283,14 @@
     <EmbeddedResource Include="Form_Outgoing_Shipments.resx">
       <DependentUpon>Form_Outgoing_Shipments.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Incoming_Shipment.resx">
+      <DependentUpon>Form_Incoming_Shipment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Products.resx">
       <DependentUpon>Form_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Purchase.resx">
+      <DependentUpon>Form_Purchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Shipment.resx">
       <DependentUpon>Form_Shipment.cs</DependentUpon>

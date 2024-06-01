@@ -24,6 +24,8 @@ namespace QuanLyKhoVan
         public Nullable<int> Warehouse_ID { get; set; }
         public Nullable<int> Supplier_ID { get; set; }
         public Nullable<System.DateTime> NgayNhapHang { get; set; }
+        public Nullable<int> SoMatHangNhap { get; set; }
+        public Nullable<int> TongTienHang { get; set; }
     
         public virtual Suppliers Suppliers { get; set; }
         public virtual Warehouses Warehouses { get; set; }

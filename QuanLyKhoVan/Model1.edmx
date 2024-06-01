@@ -43,8 +43,9 @@
           </Key>
           <Property Name="Detail_ID" Type="int" Nullable="false" />
           <Property Name="Shipment_ID" Type="int" />
-          <Property Name="SoMatHangNhap" Type="int" />
-          <Property Name="TongTIenHang" Type="int" />
+          <Property Name="Product_ID" Type="int" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="ThanhTien" Type="int" />
         </EntityType>
         <EntityType Name="Incoming_Shipments">
           <Key>
@@ -54,6 +55,8 @@
           <Property Name="Warehouse_ID" Type="int" />
           <Property Name="Supplier_ID" Type="int" />
           <Property Name="NgayNhapHang" Type="datetime" />
+          <Property Name="SoMatHangNhap" Type="int" />
+          <Property Name="TongTienHang" Type="int" />
         </EntityType>
         <EntityType Name="Inventory_Checks">
           <Key>
@@ -140,6 +143,7 @@
           </Key>
           <Property Name="Warehouse_ID" Type="int" Nullable="false" />
           <Property Name="DiaDiem" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenKho" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Incoming_Shipment_Detail_Incoming_Shipments">
           <End Role="Incoming_Shipments" Type="Self.Incoming_Shipments" Multiplicity="0..1" />
@@ -448,6 +452,8 @@
           <NavigationProperty Name="Suppliers" Relationship="Self.FK_Incoming_Shipments_Suppliers" FromRole="Incoming_Shipments" ToRole="Suppliers" />
           <NavigationProperty Name="Warehouses" Relationship="Self.FK_Incoming_Shipments_Warehouses" FromRole="Incoming_Shipments" ToRole="Warehouses" />
           <NavigationProperty Name="Incoming_Shipment_Detail" Relationship="QuanLyKhoVanModel.FK_Incoming_Shipment_Detail_Incoming_Shipments" FromRole="Incoming_Shipments" ToRole="Incoming_Shipment_Detail" />
+          <Property Name="SoMatHangNhap" Type="Int32" />
+          <Property Name="TongTienHang" Type="Int32" />
         </EntityType>
         <EntityType Name="Inventory_Checks">
           <Key>
@@ -552,6 +558,7 @@
           <NavigationProperty Name="Incoming_Shipments" Relationship="Self.FK_Incoming_Shipments_Warehouses" FromRole="Warehouses" ToRole="Incoming_Shipments" />
           <NavigationProperty Name="Inventory_Checks" Relationship="Self.FK_Inventory_Checks_Warehouses" FromRole="Warehouses" ToRole="Inventory_Checks" />
           <NavigationProperty Name="Outgoing_Shipments" Relationship="Self.FK_Outgoing_Shipments_Warehouses" FromRole="Warehouses" ToRole="Outgoing_Shipments" />
+          <Property Name="TenKho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Products_Categories">
           <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
@@ -814,8 +821,9 @@
           <Property Name="Detail_ID" Type="Int32" Nullable="false" />
           <Property Name="Shipment_ID" Type="Int32" />
           <NavigationProperty Name="Incoming_Shipments" Relationship="QuanLyKhoVanModel.FK_Incoming_Shipment_Detail_Incoming_Shipments" FromRole="Incoming_Shipment_Detail" ToRole="Incoming_Shipments" />
-          <Property Name="SoMatHangNhap" Type="Int32" />
-          <Property Name="TongTIenHang" Type="Int32" />
+          <Property Name="Product_ID" Type="Int32" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="ThanhTien" Type="Int32" />
         </EntityType>
         <Association Name="FK_Incoming_Shipment_Detail_Incoming_Shipments">
           <End Type="QuanLyKhoVanModel.Incoming_Shipments" Role="Incoming_Shipments" Multiplicity="0..1" />
@@ -874,6 +882,8 @@
           <EntitySetMapping Name="Incoming_Shipments">
             <EntityTypeMapping TypeName="QuanLyKhoVanModel.Incoming_Shipments">
               <MappingFragment StoreEntitySet="Incoming_Shipments">
+                <ScalarProperty Name="TongTienHang" ColumnName="TongTienHang" />
+                <ScalarProperty Name="SoMatHangNhap" ColumnName="SoMatHangNhap" />
                 <ScalarProperty Name="Shipment_ID" ColumnName="Shipment_ID" />
                 <ScalarProperty Name="Warehouse_ID" ColumnName="Warehouse_ID" />
                 <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
@@ -971,6 +981,7 @@
           <EntitySetMapping Name="Warehouses">
             <EntityTypeMapping TypeName="QuanLyKhoVanModel.Warehouses">
               <MappingFragment StoreEntitySet="Warehouses">
+                <ScalarProperty Name="TenKho" ColumnName="TenKho" />
                 <ScalarProperty Name="Warehouse_ID" ColumnName="Warehouse_ID" />
                 <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
               </MappingFragment>
@@ -1003,8 +1014,9 @@
           <EntitySetMapping Name="Incoming_Shipment_Detail">
             <EntityTypeMapping TypeName="QuanLyKhoVanModel.Incoming_Shipment_Detail">
               <MappingFragment StoreEntitySet="Incoming_Shipment_Detail">
-                <ScalarProperty Name="TongTIenHang" ColumnName="TongTIenHang" />
-                <ScalarProperty Name="SoMatHangNhap" ColumnName="SoMatHangNhap" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
                 <ScalarProperty Name="Shipment_ID" ColumnName="Shipment_ID" />
                 <ScalarProperty Name="Detail_ID" ColumnName="Detail_ID" />
               </MappingFragment>

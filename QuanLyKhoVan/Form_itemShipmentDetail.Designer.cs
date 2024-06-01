@@ -40,10 +40,13 @@
             this.lb_TenSP = new System.Windows.Forms.Label();
             this.comboBox_ProductID = new System.Windows.Forms.ComboBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
+            this.txt_Detail_ID = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel7
@@ -53,7 +56,7 @@
             this.panel7.Controls.Add(this.txt_Soluong);
             this.panel7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel7.Location = new System.Drawing.Point(442, 13);
+            this.panel7.Location = new System.Drawing.Point(591, 7);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(137, 46);
             this.panel7.TabIndex = 32;
@@ -77,7 +80,7 @@
             this.panel5.Controls.Add(this.lb_ThanhTien);
             this.panel5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel5.Location = new System.Drawing.Point(874, 13);
+            this.panel5.Location = new System.Drawing.Point(976, 7);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(222, 46);
             this.panel5.TabIndex = 34;
@@ -111,7 +114,7 @@
             this.panel3.Controls.Add(this.lb_Gia);
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(644, 13);
+            this.panel3.Location = new System.Drawing.Point(777, 7);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(184, 46);
             this.panel3.TabIndex = 33;
@@ -141,7 +144,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lb_TenSP);
-            this.panel2.Location = new System.Drawing.Point(213, 13);
+            this.panel2.Location = new System.Drawing.Point(392, 7);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(170, 46);
             this.panel2.TabIndex = 31;
@@ -163,7 +166,7 @@
             this.comboBox_ProductID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ProductID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboBox_ProductID.FormattingEnabled = true;
-            this.comboBox_ProductID.Location = new System.Drawing.Point(3, 16);
+            this.comboBox_ProductID.Location = new System.Drawing.Point(204, 12);
             this.comboBox_ProductID.Name = "comboBox_ProductID";
             this.comboBox_ProductID.Size = new System.Drawing.Size(135, 39);
             this.comboBox_ProductID.TabIndex = 30;
@@ -176,20 +179,44 @@
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
             this.btn_Xoa.Image = global::QuanLyKhoVan.Properties.Resources.ic_delete;
-            this.btn_Xoa.Location = new System.Drawing.Point(1140, 14);
+            this.btn_Xoa.Location = new System.Drawing.Point(1238, 8);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(59, 48);
             this.btn_Xoa.TabIndex = 41;
             this.btn_Xoa.UseVisualStyleBackColor = false;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
+            // txt_Detail_ID
+            // 
+            this.txt_Detail_ID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Detail_ID.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Detail_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(121)))), ((int)(((byte)(184)))));
+            this.txt_Detail_ID.Location = new System.Drawing.Point(27, 5);
+            this.txt_Detail_ID.Name = "txt_Detail_ID";
+            this.txt_Detail_ID.Size = new System.Drawing.Size(87, 34);
+            this.txt_Detail_ID.TabIndex = 1;
+            this.txt_Detail_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Detail_ID_KeyPress);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txt_Detail_ID);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(22, 7);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(137, 46);
+            this.panel1.TabIndex = 33;
+            // 
             // Form_itemShipmentDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 71);
+            this.ClientSize = new System.Drawing.Size(1309, 66);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
@@ -208,6 +235,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +255,7 @@
         private System.Windows.Forms.Label lb_TenSP;
         private System.Windows.Forms.ComboBox comboBox_ProductID;
         private System.Windows.Forms.Button btn_Xoa;
+        private System.Windows.Forms.TextBox txt_Detail_ID;
+        private System.Windows.Forms.Panel panel1;
     }
 }

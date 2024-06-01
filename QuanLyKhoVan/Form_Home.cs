@@ -402,11 +402,11 @@ namespace QuanLyKhoVan
         private void btn_PhieuNhap_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_Incoming_Shipments form_Incoming_Shipments = new Form_Incoming_Shipments();
-            form_Incoming_Shipments.ShowDialog();
-
+            Form_Incoming_Shipment form_Partner = new Form_Incoming_Shipment();
+            form_Partner.ShowDialog();
+            
             this.Show();
-            form_Incoming_Shipments.FormClosed += (s, args) => this.Show();
+            form_Partner.FormClosed += (s, args) => this.Show();
 
         }
 

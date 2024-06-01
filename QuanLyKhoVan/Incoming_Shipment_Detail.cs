@@ -16,8 +16,9 @@ namespace QuanLyKhoVan
     {
         public int Detail_ID { get; set; }
         public Nullable<int> Shipment_ID { get; set; }
-        public Nullable<int> SoMatHangNhap { get; set; }
-        public Nullable<int> TongTIenHang { get; set; }
+        public Nullable<int> Product_ID { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<int> ThanhTien { get; set; }
     
         public virtual Incoming_Shipments Incoming_Shipments { get; set; }
     }
