@@ -559,81 +559,97 @@ namespace QuanLyKhoVan
                 MessageBox.Show($"Số lượng tồn: {inventory}");
             }
         }
+        void ExportExcel()
+        {
+            
+                // Thiết lập LicenseContext (quan trọng!)
+                OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+                string[] tableNames = { "Categories", "Customers", "Employees", "Incoming_Shipments", "Incoming_Shipment_Detail", "Inventory_Checks", "Order", "Order_Details", "Outgoing_Shipments", "Products", "Shipments", "Suppliers", "Warehouses" };
+                string[] sheetNames = { "Danh mục", "Khách hàng", "Nhân viên", "Phiếu nhập", "Phiếu nhập chi tiết", "Kiểm kê", "Đơn hàng", "Đơn hàng chi tiết", "Phiếu xuất", "Sản phẩm", "Vận chuyển", "Nhà cung cấp", "Kho hàng" };
+
+                using (ExcelPackage excelPackage = new ExcelPackage())
+                {
+                    for (int i = 0; i < tableNames.Length; i++)
+                    {
+                        string tableName = tableNames[i];
+                        string sheetName = sheetNames[i];
+
+                        try
+                        {
+                            using (SqlConnection connection = new SqlConnection(db.Database.Connection.ConnectionString))
+                            {
+                                connection.Open();
+
+                                using (SqlCommand command = new SqlCommand($"SELECT * FROM [{tableName}]", connection))
+
+                                using (SqlDataReader reader = command.ExecuteReader())
+                                {
+                                    // Tạo worksheet ngay cả khi không có dữ liệu
+                                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(sheetName);
+
+                                    if (reader.HasRows)
+                                    {
+                                        int row = 1;
+                                        while (reader.Read())
+                                        {
+                                            for (int j = 0; j < reader.FieldCount; j++)
+                                            {
+                                                if (row == 1)
+                                                {
+                                                    // Ghi tên cột vào hàng đầu tiên
+                                                    worksheet.Cells[row, j + 1].Value = reader.GetName(j);
+                                                }
+
+                                                // Ghi dữ liệu
+                                                worksheet.Cells[row + 1, j + 1].Value = reader.GetValue(j);
+                                            }
+                                            row++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        worksheet.Cells[1, 1].Value = "Không có dữ liệu";
+                                    }
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi khi xuất dữ liệu bảng {tableName}: {ex.Message}");
+                        }
+                    }
+
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        excelPackage.SaveAs(new FileInfo(saveFileDialog.FileName));
+                    }
+                }
+            
+
+
+        }
 
         //OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
         private void btn_export_Click(object sender, EventArgs e)
         {
-            // Thiết lập LicenseContext (quan trọng!)
-            OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-
-            string[] tableNames = { "Categories", "Customers", "Employees", "Incoming_Shipments", "Incoming_Shipment_Detail", "Inventory_Checks", "Order", "Order_Details", "Outgoing_Shipments", "Products", "Shipments", "Suppliers", "Warehouses" };
-            string[] sheetNames = { "Danh mục", "Khách hàng", "Nhân viên", "Phiếu nhập", "Phiếu nhập chi tiết", "Kiểm kê", "Đơn hàng", "Đơn hàng chi tiết", "Phiếu xuất", "Sản phẩm", "Vận chuyển", "Nhà cung cấp", "Kho hàng" };
-
-            using (ExcelPackage excelPackage = new ExcelPackage())
+            try
             {
-                for (int i = 0; i < tableNames.Length; i++)
-                {
-                    string tableName = tableNames[i];
-                    string sheetName = sheetNames[i];
+                ExportExcel();
+                MessageBox.Show("Xuất dữ liệu thành công");
+            }catch(Exception ex)
+            {
 
-                    try
-                    {
-                        using (SqlConnection connection = new SqlConnection(db.Database.Connection.ConnectionString))
-                        {
-                            connection.Open();
-                            
-                            using (SqlCommand command = new SqlCommand($"SELECT * FROM [{tableName}]", connection))
-
-                            using (SqlDataReader reader = command.ExecuteReader())
-                            {
-                                // Tạo worksheet ngay cả khi không có dữ liệu
-                                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(sheetName);
-
-                                if (reader.HasRows)
-                                {
-                                    int row = 1;
-                                    while (reader.Read())
-                                    {
-                                        for (int j = 0; j < reader.FieldCount; j++)
-                                        {
-                                            if (row == 1)
-                                            {
-                                                // Ghi tên cột vào hàng đầu tiên
-                                                worksheet.Cells[row, j + 1].Value = reader.GetName(j);
-                                            }
-
-                                            // Ghi dữ liệu
-                                            worksheet.Cells[row + 1, j + 1].Value = reader.GetValue(j);
-                                        }
-                                        row++;
-                                    }
-                                }
-                                else
-                                {
-                                    worksheet.Cells[1, 1].Value = "Không có dữ liệu";
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Lỗi khi xuất dữ liệu bảng {tableName}: {ex.Message}");
-                    }
-                }
-
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    excelPackage.SaveAs(new FileInfo(saveFileDialog.FileName));
-                }
+               MessageBox.Show($"Lỗi khi xuất dữ liệu: {ex.Message}");
             }
         }
-
-
-
     }
-}
+
+
+ }
+
 
 
 
