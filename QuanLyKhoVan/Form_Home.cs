@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
@@ -11,6 +13,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using OfficeOpenXml;
+
+
 
 namespace QuanLyKhoVan
 {
@@ -19,7 +24,7 @@ namespace QuanLyKhoVan
         public Form_Home()
         {
             InitializeComponent();
-           
+
         }
 
 
@@ -95,7 +100,7 @@ namespace QuanLyKhoVan
                            WarehouseID = p.Warehouse_ID,
                            SupplierID = p.Supplier_ID,
                            NgayNhapHang = p.NgayNhapHang,
-                          
+
                        };
             dataGridView1.DataSource = data.ToList();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -257,7 +262,7 @@ namespace QuanLyKhoVan
 
 
             }
-            
+
         }
 
         private void btn_LogOut_Click(object sender, EventArgs e)
@@ -266,7 +271,7 @@ namespace QuanLyKhoVan
             Form_Login form_Login = new Form_Login();
             form_Login.ShowDialog();
 
-            
+
         }
         #region Xu li UI 
 
@@ -276,15 +281,15 @@ namespace QuanLyKhoVan
             {
                 panel4.Visible = true;
                 panel4.BringToFront();
-               
+
             }
             else
             {
                 panel4.Visible = false;
-               
+
             }
         }
-       
+
 
 
 
@@ -299,18 +304,18 @@ namespace QuanLyKhoVan
                 panel1.Visible = false;
             }
         }
-            private bool check;
+        private bool check;
 
-            private void btn_About_Click(object sender, EventArgs e)
-            {
-                ShowAboutInfo();
-            }
+        private void btn_About_Click(object sender, EventArgs e)
+        {
+            ShowAboutInfo();
+        }
 
-            private void btn_QuanLy_Click(object sender, EventArgs e)
-            {
-                ShowQuanLy();
-                timer1.Start();
-            }
+        private void btn_QuanLy_Click(object sender, EventArgs e)
+        {
+            ShowQuanLy();
+            timer1.Start();
+        }
         #endregion
 
 
@@ -326,7 +331,7 @@ namespace QuanLyKhoVan
             form_Products.FormClosed += (s, args) => this.Show();
         }
 
-      
+
 
         private void btn_DanhMuc_Click(object sender, EventArgs e)
         {
@@ -404,7 +409,7 @@ namespace QuanLyKhoVan
             this.Hide();
             Form_Incoming_Shipment form_Partner = new Form_Incoming_Shipment();
             form_Partner.ShowDialog();
-            
+
             this.Show();
             form_Partner.FormClosed += (s, args) => this.Show();
 
@@ -446,26 +451,26 @@ namespace QuanLyKhoVan
             Form_Home form_Home = new Form_Home();
             form_Home.ShowDialog();
 
-           
+
         }
         #endregion
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-        //    panel3.Invoke((MethodInvoker)(() =>
-        //    {
-        //        if (check)
-        //        {
-        //            panel3.Left -= 150;
-        //        }
-        //        else
-        //        {
-        //            panel3.Left += 150;
-        //        }
+            //    panel3.Invoke((MethodInvoker)(() =>
+            //    {
+            //        if (check)
+            //        {
+            //            panel3.Left -= 150;
+            //        }
+            //        else
+            //        {
+            //            panel3.Left += 150;
+            //        }
 
-        //        timer1.Stop();
-        //        check = !check;
-        //    }));
+            //        timer1.Stop();
+            //        check = !check;
+            //    }));
         }
 
         #region thống kê 
@@ -505,7 +510,7 @@ namespace QuanLyKhoVan
         }
 
 
-      
+
         void InventoryChart()
         {
             //var inventory = (from p in db.Products
@@ -536,7 +541,7 @@ namespace QuanLyKhoVan
                 }
             };
 
-           
+
             chart1.Series["Inventory"].ChartType = SeriesChartType.Pie;
             chart1.ChartAreas[0].AxisX.Title = "Sản phẩm ";
             chart1.ChartAreas[0].AxisY.Title = "Số lượng tồn ";
@@ -554,5 +559,89 @@ namespace QuanLyKhoVan
                 MessageBox.Show($"Số lượng tồn: {inventory}");
             }
         }
+
+        //OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            // Thiết lập LicenseContext (quan trọng!)
+            OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            string[] tableNames = { "Categories", "Customers", "Employees", "Incoming_Shipments", "Incoming_Shipment_Detail", "Inventory_Checks", "Order", "Order_Details", "Outgoing_Shipments", "Products", "Shipments", "Suppliers", "Warehouses" };
+            string[] sheetNames = { "Danh mục", "Khách hàng", "Nhân viên", "Phiếu nhập", "Phiếu nhập chi tiết", "Kiểm kê", "Đơn hàng", "Đơn hàng chi tiết", "Phiếu xuất", "Sản phẩm", "Vận chuyển", "Nhà cung cấp", "Kho hàng" };
+
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                for (int i = 0; i < tableNames.Length; i++)
+                {
+                    string tableName = tableNames[i];
+                    string sheetName = sheetNames[i];
+
+                    try
+                    {
+                        using (SqlConnection connection = new SqlConnection(db.Database.Connection.ConnectionString))
+                        {
+                            connection.Open();
+                            
+                            using (SqlCommand command = new SqlCommand($"SELECT * FROM [{tableName}]", connection))
+
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                // Tạo worksheet ngay cả khi không có dữ liệu
+                                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(sheetName);
+
+                                if (reader.HasRows)
+                                {
+                                    int row = 1;
+                                    while (reader.Read())
+                                    {
+                                        for (int j = 0; j < reader.FieldCount; j++)
+                                        {
+                                            if (row == 1)
+                                            {
+                                                // Ghi tên cột vào hàng đầu tiên
+                                                worksheet.Cells[row, j + 1].Value = reader.GetName(j);
+                                            }
+
+                                            // Ghi dữ liệu
+                                            worksheet.Cells[row + 1, j + 1].Value = reader.GetValue(j);
+                                        }
+                                        row++;
+                                    }
+                                }
+                                else
+                                {
+                                    worksheet.Cells[1, 1].Value = "Không có dữ liệu";
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi khi xuất dữ liệu bảng {tableName}: {ex.Message}");
+                    }
+                }
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    excelPackage.SaveAs(new FileInfo(saveFileDialog.FileName));
+                }
+            }
+        }
+
+
+
     }
 }
+
+
+
+
+
+
+    
+
+
+
+
